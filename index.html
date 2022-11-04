@@ -30,6 +30,8 @@
                         class="email__link"
                 >
                     <a
+                            onmouseenter={changeColor('red','name')}
+                            onmouseleave={changeColor('inherit','name')}
                             href="#about"
 
                     style="
@@ -56,7 +58,7 @@
                 >
                     <h1
                             style="color: inherit"
-                    class="email__title"
+                    class="email__title name email"
                     >
                     pablo
                     </h1>
@@ -82,7 +84,7 @@
                 >
                     <h1
                             style="color: inherit"
-                    class="email__title"
+                    class="email__title telegram email"
                     >
                     @
                     </h1>
@@ -105,6 +107,8 @@
                         class="email__link"
                 >
                     <a
+                            onmouseenter={changeColor('darkgreen','web')}
+                            onmouseleave={changeColor('inherit','web')}
                             href="https://pablogarcor.com"
                     style="
                     margin-block-start: 1em;
@@ -136,7 +140,7 @@
                     >
                         <h1
                                 style="color: inherit"
-                        class="email__title"
+                        class="email__title telegram web email"
                         >
                         pablogarcor
                         </h1>
@@ -150,6 +154,8 @@
                                 class="email__link-telegram email__link"
                         >
                             <a
+                                    onmouseenter={changeColor('#229ED9','telegram')}
+                                    onmouseleave={changeColor('inherit','telegram')}
                                     href="https://t.me/pablogarcor"
                                     target="_blank"
                                     rel="noreferrer"
@@ -171,7 +177,7 @@
                     >
                         <h1
                                 style="color: inherit"
-                        class="email__title"
+                        class="email__title web email"
                         >
                         .com
                         </h1>
@@ -190,6 +196,8 @@
                 class="email__link"
         >
             <a
+                    onmouseenter={changeColor('orange','email')}
+                    onmouseleave={changeColor('inherit','email')}
                     href="mailto: pablo@pablogarcor.com"
             style="
             margin-block-start: 1em;
@@ -201,5 +209,13 @@
         </div>
     </div>
     </div>
+<script>
+    const changeColor=(color, className)=>{
+        const els=document.getElementsByClassName(className)
+        for (const element of els) {
+            element.style.color=color
+        }
+    }
+</script>
 </body>
 </html>
