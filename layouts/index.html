@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <title>Pablogarcor web</title>
 </head>
 <body class="container">
@@ -11,8 +11,7 @@
     >
         <div>
             <h1 style="text-align:center">
-                Hello! <span role="img">👋🏻👨‍💻</span> My name is Pablo. I'm a software developer fueled by coffee and
-                Spanish tortilla <span role="img">💃</span>. I'm in it for the technology <span role="img">👑</span>
+                {{ .Content}}
             </h1>
         </div>
         <div
@@ -31,8 +30,8 @@
                         class="email__link"
                 >
                     <a
-                            onmouseenter={changeColor('red','name')}
-                            onmouseleave={changeColor('inherit','name')}
+                            onmouseenter="changeColor('red','name')"
+                            onmouseleave="changeColor('inherit','name')"
                             href="#about"
 
                     style="
@@ -108,8 +107,8 @@
                         class="email__link"
                 >
                     <a
-                            onmouseenter={changeColor('darkgreen','web')}
-                            onmouseleave={changeColor('inherit','web')}
+                            onmouseenter="changeColor('darkgreen','web')"
+                            onmouseleave="changeColor('inherit','web')"
                             href="https://pablogarcor.com"
                     style="
                     margin-block-start: 1em;
@@ -155,8 +154,8 @@
                                 class="email__link-telegram email__link"
                         >
                             <a
-                                    onmouseenter={changeColor('#229ED9','telegram')}
-                                    onmouseleave={changeColor('inherit','telegram')}
+                                    onmouseenter="changeColor('#229ED9','telegram')"
+                                    onmouseleave="changeColor('inherit','telegram')"
                                     href="https://t.me/pablogarcor"
                                     target="_blank"
                                     rel="noreferrer"
@@ -197,8 +196,8 @@
                 class="email__link"
         >
             <a
-                    onmouseenter={changeColor('orange','email')}
-                    onmouseleave={changeColor('inherit','email')}
+                    onmouseenter="changeColor('orange','email')"
+                    onmouseleave="changeColor('inherit','email')"
                     href="mailto: pablo@pablogarcor.com"
             style="
             margin-block-start: 1em;
