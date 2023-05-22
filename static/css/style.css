@@ -43,6 +43,7 @@ h1 {
     font-size: 4em;
     display: inline;
 }
+
 @media only screen and (min-width: 450px){
     .email__container {
         font-size: clamp( 0px, 0.75vw, 3px);
