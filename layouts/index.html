@@ -12,7 +12,7 @@
         <div>
             <h1 style="text-align:center">
                 {{ $presentationContentPage := .Site.GetPage "content/presentation.md" }}
-                {{ if presentationContentPage }}
+                {{ if $presentationContentPage }}
                 {{ $presentationContentPage.Content }}
                 {{ end }}
             </h1>
