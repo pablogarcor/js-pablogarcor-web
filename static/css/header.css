@@ -1,0 +1,24 @@
+.title-container:hover .title-toggleable-part {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.title-toggleable-part{
+    display: inline-block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 1;
+    transform: initial;
+}
+
+.title-fixed-part {
+    margin-left: initial;
+    transition: margin-left 0.3s ease;
+}
+
+.title-container:hover .title-fixed-part:nth-child(3) {
+    margin-left: -0.25em;
+}
+
+.title-container:hover .title-fixed-part:nth-child(6) {
+    margin-left: -1.05em;
+}

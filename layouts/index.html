@@ -6,9 +6,11 @@
     <link rel="stylesheet" href="/css/style.css">
     <title>Pablogarcor web</title>
 </head>
-<body class="container">
+<body>
+
+    {{ partial "header.html" . }}
     <div
-        style="display:flex; flex-direction:column; align-items:center; max-width:930px"
+        class="container"
     >
         <div>
             <h1 style="text-align:center">
@@ -226,6 +228,15 @@
             {{ $aboutContentPage.Content }}
             {{ end }}
         </div>
+        <h1>Latest Blog Posts</h1>
+        <ul>
+            {{ range first 5 (where .Site.RegularPages "Section" "blog") }}
+            <li>
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+                <span>({{ .Date.Format "January 2, 2006" }})</span>
+            </li>
+            {{ end }}
+        </ul>
     </div>
 <script>
     const changeColor=(color, className)=>{
