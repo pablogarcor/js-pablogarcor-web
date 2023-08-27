@@ -1,0 +1,14 @@
+<head>
+    <link rel="stylesheet" href="/css/latest-posts.css">
+</head>
+<div>
+    <h1>Latest Posts</h1>
+    <div>
+        {{ range first 5 (where .Site.RegularPages "Section" "blog") }}
+        <a class="post" href="{{ .Permalink }}">
+            <h4>{{ .Title }}</h4>
+            <time>{{ .Date.Format "January 2, 2006" }}</time>
+        </a>
+        {{ end }}
+    </div>
+</div>
