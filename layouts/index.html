@@ -13,12 +13,24 @@
         class="container"
     >
         <div>
-            <h1 style="text-align:center">
+            <h1>
                 {{ $presentationContentPage := .Site.GetPage "content/presentation.md" }}
                 {{ if $presentationContentPage }}
                 {{ $presentationContentPage.Content }}
                 {{ end }}
             </h1>
+        </div>
+
+        <div>
+            <h1>Latest Blog Posts</h1>
+            <ul>
+                {{ range first 5 (where .Site.RegularPages "Section" "blog") }}
+                <li>
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                    <span>({{ .Date.Format "January 2, 2006" }})</span>
+                </li>
+                {{ end }}
+            </ul>
         </div>
         <div
 
@@ -228,15 +240,6 @@
             {{ $aboutContentPage.Content }}
             {{ end }}
         </div>
-        <h1>Latest Blog Posts</h1>
-        <ul>
-            {{ range first 5 (where .Site.RegularPages "Section" "blog") }}
-            <li>
-                <a href="{{ .Permalink }}">{{ .Title }}</a>
-                <span>({{ .Date.Format "January 2, 2006" }})</span>
-            </li>
-            {{ end }}
-        </ul>
     </div>
 <script>
     const changeColor=(color, className)=>{

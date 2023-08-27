@@ -22,3 +22,36 @@
 .title-container:hover .title-fixed-part:nth-child(6) {
     margin-left: -1.05em;
 }
+
+.title-container {
+    margin: 0 0 0.5em 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.25em;
+}
+
+.nav-container {
+    display: block;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+}
+
+.theme-toggle-container {
+    display: block;
+}
+
+@media only screen and (min-width: 768px) {
+    #header {
+        padding: 3em 2em;
+    }
+}
