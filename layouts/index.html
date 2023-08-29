@@ -8,40 +8,40 @@
 </head>
 <body>
 
-    {{ partial "header.html" . }}
-    <div
+{{ partial "header.html" . }}
+<div
         class="container"
-    >
-        <div>
-            <h1>
-                {{ $presentationContentPage := .Site.GetPage "content/presentation.md" }}
-                {{ if $presentationContentPage }}
-                {{ $presentationContentPage.Content }}
-                {{ end }}
-            </h1>
-        </div>
+>
+    <div>
+        <h1>
+            {{ $presentationContentPage := .Site.GetPage "content/presentation.md" }}
+            {{ if $presentationContentPage }}
+            {{ $presentationContentPage.Content }}
+            {{ end }}
+        </h1>
+    </div>
 
-        {{ partial "latest-posts.html" . }}
+    {{ partial "latest-posts.html" . }}
 
-        <div
-                id="about"
-                style="
+    <div
+            id="about"
+            style="
           padding:1em;
     border-radius: 1em;
     background: #E1F7F8;
     margin-top:4em;
     border: 0.01em solid #1DA1F2;
           ">
-            {{ $aboutContentPage := .Site.GetPage "content/about.md" }}
-            {{ if $aboutContentPage }}
-            {{ $aboutContentPage.Content }}
-            {{ end }}
-        </div>
+        {{ $aboutContentPage := .Site.GetPage "content/about.md" }}
+        {{ if $aboutContentPage }}
+        {{ $aboutContentPage.Content }}
+        {{ end }}
+    </div>
 
-        <div
+    <div
 
-        class="email__container"
-        >
+            class="email__container"
+    >
         <div style="display: flex;">
             <div
                     style="
@@ -58,12 +58,12 @@
                             onmouseleave="changeColor('inherit','name')"
                             href="#about"
 
-                    style="
+                            style="
                     margin-block-start: 1em;
                     margin-block-end: 1em;
                     "
                     >
-                    Me
+                        Me
                     </a>
                 </div>
                 <div
@@ -82,9 +82,9 @@
                 >
                     <h1
                             style="color: inherit"
-                    class="email__title name email"
+                            class="email__title name email"
                     >
-                    pablo
+                        pablo
                     </h1>
                 </div>
             </div>
@@ -96,7 +96,7 @@
                 "
             >
                 <div
-                style="
+                        style="
                 height: calc( 19em + 1px );
                 "></div>
                 <div
@@ -108,9 +108,9 @@
                 >
                     <h1
                             style="color: inherit"
-                    class="email__title twitter email"
+                            class="email__title twitter email"
                     >
-                    @
+                        @
                     </h1>
                     <div
                             style="
@@ -134,12 +134,12 @@
                             onmouseenter="changeColor('darkgreen','web')"
                             onmouseleave="changeColor('inherit','web')"
                             href="https://pablogarcor.com"
-                    style="
+                            style="
                     margin-block-start: 1em;
                     margin-block-end: 1em;
                     "
                     >
-                    Web
+                        Web
                     </a>
                 </div>
                 <div
@@ -164,9 +164,9 @@
                     >
                         <h1
                                 style="color: inherit"
-                        class="email__title twitter web email"
+                                class="email__title twitter web email"
                         >
-                        pablogarcor
+                            pablogarcor
                         </h1>
                         <div
                                 style="
@@ -183,12 +183,12 @@
                                     href="https://twitter.com/pablogarcor"
                                     target="_blank"
                                     rel="noreferrer"
-                            style="
+                                    style="
                             margin-block-start: 1em;
                             margin-block-end: 1em;
                             "
                             >
-                            Twitter
+                                Twitter
                             </a>
                         </div>
                     </div>
@@ -201,9 +201,9 @@
                     >
                         <h1
                                 style="color: inherit"
-                        class="email__title web email"
+                                class="email__title web email"
                         >
-                        .com
+                            .com
                         </h1>
                     </div>
                 </div>
@@ -223,21 +223,21 @@
                     onmouseenter="changeColor('orange','email')"
                     onmouseleave="changeColor('inherit','email')"
                     href="mailto: pablo@pablogarcor.com"
-            style="
+                    style="
             margin-block-start: 1em;
             margin-block-end: 1em;
             "
             >
-            Email
+                Email
             </a>
         </div>
     </div>
-    </div>
+</div>
 <script>
-    const changeColor=(color, className)=>{
-        const els=document.getElementsByClassName(className)
+    const changeColor = (color, className) => {
+        const els = document.getElementsByClassName(className)
         for (const element of els) {
-            element.style.color=color
+            element.style.color = color
         }
     }
 </script>

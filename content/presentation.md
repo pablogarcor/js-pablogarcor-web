@@ -2,4 +2,4 @@
 title = "Presentation"
 +++
 
-Hello! 👋🏻👨‍💻 I'm Pablo, a software developer in Spain. Welcome to the printf of my thoughts! 🚀
+Hello! 👋🏻👨‍💻 I'm Pablo, a software developer in Spain. I code and try to sum it up here. Welcome to the printf of my thoughts! 🚀
