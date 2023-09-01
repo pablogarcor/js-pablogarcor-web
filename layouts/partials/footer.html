@@ -1,0 +1,11 @@
+<div style="display: flex; justify-content: center; flex-direction: column; align-items: center">
+    {{ partial "contact.html" . }}
+    <div style="display: flex; gap: 1.5em; align-items: center">
+        <p>Made by Pablo Garcia Ortega</p>
+        {{ with resources.Get "logos/hugo-logo.svg" }}
+        <a href="https://gohugo.io/" target="_blank">
+            <img src="{{ .RelPermalink }}" alt="HUGO Logo" style="width: 4.5em">
+        </a>
+        {{ end }}
+    </div>
+</div>

@@ -1,0 +1,205 @@
+<head>
+    <link rel="stylesheet" href="/css/contact.css">
+</head>
+<div
+
+        class="email__container"
+>
+    <div style="display: flex;">
+        <div
+                style="
+                    display: flex;
+                    flex-direction: column;
+                    width: fit-content;
+                "
+        >
+            <div
+                    class="email__link"
+            >
+                <a
+                        onmouseenter="changeColor('red','name')"
+                        onmouseleave="changeColor('inherit','name')"
+                        href="#about"
+
+                        style="
+                    margin-block-start: 1em;
+                    margin-block-end: 1em;
+                    "
+                >
+                    Me
+                </a>
+            </div>
+            <div
+                    style="
+                        border-top: 1px solid;
+                        border-left: 1px solid;
+                        border-right: 1px solid;
+                        height: 1em;
+                    "></div>
+            <div
+                    style="
+                        line-height: 1.15;
+                        font-size: 3em;
+                        width: fit-content;
+                    "
+            >
+                <h1
+                        style="color: inherit"
+                        class="email__title name email"
+                >
+                    pablo
+                </h1>
+            </div>
+        </div>
+        <div
+                style="
+                    display: flex;
+                    flex-direction: column;
+                    width: fit-content;
+                "
+        >
+            <div
+                    style="
+                height: calc( 19em + 1px );
+                "></div>
+            <div
+                    style="
+                        line-height: 1.15;
+                        font-size: 3em;
+                        width: fit-content;
+                    "
+            >
+                <h1
+                        style="color: inherit"
+                        class="email__title twitter email"
+                >
+                    @
+                </h1>
+                <div
+                        style="
+                            border-bottom: 1px solid;
+                            border-left: 1px solid;
+                            height: 0.33333em;
+                        "></div>
+            </div>
+        </div>
+        <div
+                style="
+                    display: flex;
+                    flex-direction: column;
+                    width: fit-content;
+                "
+        >
+            <div
+                    class="email__link"
+            >
+                <a
+                        onmouseenter="changeColor('darkgreen','web')"
+                        onmouseleave="changeColor('inherit','web')"
+                        href="https://pablogarcor.com"
+                        style="
+                    margin-block-start: 1em;
+                    margin-block-end: 1em;
+                    "
+                >
+                    Web
+                </a>
+            </div>
+            <div
+                    style="
+                        border-top: 1px solid;
+                        border-left: 1px solid;
+                        border-right: 1px solid;
+                        height: 1em;
+                    "></div>
+            <div
+                    style="
+                        display: flex;
+                        width: fit-content;
+                    "
+            >
+                <div
+                        style="
+                            line-height: 1.15;
+                            font-size: 3em;
+                            width: fit-content;
+                        "
+                >
+                    <h1
+                            style="color: inherit"
+                            class="email__title twitter web email"
+                    >
+                        pablogarcor
+                    </h1>
+                    <div
+                            style="
+                                border-bottom: 1px solid;
+                                border-right: 1px solid;
+                                height: 0.33333em;
+                            "></div>
+                    <div
+                            class="email__link email__link-twitter"
+                    >
+                        <a
+                                onmouseenter="changeColor('#1DA1F2','twitter')"
+                                onmouseleave="changeColor('inherit','twitter')"
+                                href="https://twitter.com/pablogarcor"
+                                target="_blank"
+                                rel="noreferrer"
+                                style="
+                            margin-block-start: 1em;
+                            margin-block-end: 1em;
+                            "
+                        >
+                            Twitter
+                        </a>
+                    </div>
+                </div>
+                <div
+                        style="
+                            line-height: 1.15;
+                            font-size: 3em;
+                            width: fit-content;
+                        "
+                >
+                    <h1
+                            style="color: inherit"
+                            class="email__title web email"
+                    >
+                        .com
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div
+            style="
+                border-bottom: 1px solid;
+                border-left: 1px solid;
+                border-right: 1px solid;
+                height: 1em;
+            "></div>
+    <div
+            class="email__link"
+    >
+        <a
+                onmouseenter="changeColor('orange','email')"
+                onmouseleave="changeColor('inherit','email')"
+                href="mailto: pablo@pablogarcor.com"
+                style="
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            "
+        >
+            Email
+        </a>
+    </div>
+</div>
+<script>
+    const changeColor = (color, className) => {
+        const els = document.getElementsByClassName(className)
+        for (const element of els) {
+            element.style.color = color
+        }
+    }
+</script>
