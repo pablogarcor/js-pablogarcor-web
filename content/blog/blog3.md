@@ -1,9 +1,9 @@
 ---
-title: "My Second Blog Post"
-date: 2022-07-04
+title: "My 3 Blog Post"
+date: 2023-09-04
 author: "Jane Doe"
 tags: ["blog", "hugo", "tutorial"]
-description: "This is my second blog post using Hugo static site generator. In this post, I will be sharing my experiences and some tips to get you started."
+description: "This is my first blog post using Hugo static site generator. In this post, I will be sharing my experiences and some tips to get you started."
 ---
 
 # Welcome to my First Blog Post
