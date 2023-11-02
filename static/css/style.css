@@ -58,4 +58,8 @@ h1 {
     .container {
         padding: 4em 2em;
     }
+
+    article.container{
+        padding: 0  2em;
+    }
 }
