@@ -1,0 +1,27 @@
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+.post__container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    border-bottom: 1px solid #2c2c2c;
+    padding: 0.4em;
+}
+
+.post__container > h3{
+    margin: 0;
+}
+
+.post__container > time{
+    display: none;
+}
+
+@media only screen and (min-width: 768px){
+    .post__container > time{
+        display: initial;
+    }
+}
