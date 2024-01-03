@@ -42,6 +42,10 @@ h1 {
     display: inline;
 }
 
+article.container > .date{
+    margin-block-start: 0;
+}
+
 @media only screen and (min-width: 450px) {
     .email__container {
         font-size: clamp(0px, 0.75vw, 3px);
