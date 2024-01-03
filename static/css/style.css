@@ -56,10 +56,10 @@ h1 {
 
 @media only screen and (min-width: 768px) {
     .container {
-        padding: 4em 2em;
+        padding: 1.5em 2em 4em;
     }
 
     article.container{
-        padding: 0  2em;
+        padding: 1.5em 2em 4em;
     }
 }

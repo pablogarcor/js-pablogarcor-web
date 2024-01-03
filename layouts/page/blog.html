@@ -9,8 +9,8 @@
     <title>{{ .Title }}</title>
   </head>
   <body>
+    {{ partial "header.html" . }}
     <div class="container">
-      {{ partial "header.html" . }}
       {{ range (where .Site.RegularPages "Section" "blog").GroupByDate "2006" }}
       <h3>{{ .Key }}</h3>
       <ul>
