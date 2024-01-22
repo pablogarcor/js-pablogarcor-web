@@ -1,3 +1,5 @@
 baseURL = 'http://pablogarcor.com/'
 languageCode = 'en-us'
 title = 'pablogarcor Site'
+[permalinks]
+  blog = "/:slug/"

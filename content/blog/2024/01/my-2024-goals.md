@@ -1,6 +1,7 @@
 ---
 title: "Embarking on a Tech Adventure: My 2024 Goals"
 date: 2024-01-21
+slug: "my-2024-goals"
 author: "Pablo García Ortega"
 tags: ["Coding", "DIY Projects", "Smart Home Automation", "Python Development", "Multimedia Server"]
 description: "In my inaugural blog post, I dive into my aspirations for 2024, ranging from web development and smart home automation to Python programming and setting up a multimedia server."
