@@ -1,5 +1,5 @@
 ---
-title: "Embarking on a Tech Adventure: My 2024 Goals"
+title: "My 2024 Goals"
 date: 2024-01-21
 slug: "my-2024-goals"
 author: "Pablo García Ortega"
