@@ -1,6 +1,6 @@
 body {
     font-family: sans-serif;
-    font-size: 16px;
+    font-size: 13px;
     --content-max-width: 58em;
 }
 
@@ -47,18 +47,27 @@ article.container > .date{
 }
 
 @media only screen and (min-width: 450px) {
+    body{
+        font-size: 14px;
+    }
     .email__container {
         font-size: clamp(0px, 0.75vw, 3px);
     }
 }
 
 @media only screen and (min-width: 590px) {
+    body{
+        font-size: 15px;
+    }
     .email__container {
         font-size: clamp(0px, 0.75vw, 4px);
     }
 }
 
 @media only screen and (min-width: 768px) {
+    body{
+        font-size: 16px;
+    }
     .container {
         padding: 1.5em 2em 4em;
     }
