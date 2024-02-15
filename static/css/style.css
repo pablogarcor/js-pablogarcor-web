@@ -46,6 +46,10 @@ article.container > .date{
     margin-block-start: 0;
 }
 
+img{
+    width: 100%;
+}
+
 @media only screen and (min-width: 450px) {
     body{
         font-size: 14px;
