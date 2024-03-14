@@ -1,5 +1,5 @@
 #!/bin/bash
-cat $(pwd)
-docker run --rm -p 1313:1313 -v $(pwd)/:/src klakegg/hugo:0.107.0-ext-alpine server
-
-
+docker run -p 1313:1313 \
+  -v $(dirname "$0")/..:/src \
+  hugomods/hugo:0.122.0 \
+  hugo server --noBuildLock --bind 0.0.0.0
