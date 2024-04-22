@@ -1,8 +1,8 @@
 ---
 title: "DNS over HTTPS on OpenWRT"
-date: 2024-04-02
+date: 2024-04-03
 slug: "dns-over-https-openwrt"
-author: "Your Name"
+author: "Pablo García Ortega"
 tags: ["DNS over HTTPS", "OpenWRT", "Internet Security", "Privacy", "Network Configuration"]
 description: "Explore how DNS over HTTPS (DoH) can protect your online privacy and bypass ISP domain blocking. This guide provides a comprehensive overview and step-by-step instructions on configuring DoH on an OpenWRT router."
 ---
@@ -21,7 +21,7 @@ Normally, when you surf the web and type a domain name, a DNS resolution request
 
 To verify that your router is sending DNS requests that your ISP can see:
 
-1. Connect to your router via SSH: `ssh <router_ip>@<router_user>`
+1. Connect to your router via SSH: `ssh <router_user>@<router_ip>`
 2. Install tcpdump: `opkg install tcpdump`
 3. Find your WAN interface: `ip addr`
 4. Execute tcpdump: `tcpdump -i <wan_interface> udp and dst port 53`
