@@ -1,9 +1,0 @@
-{
-  "routes": [
-    {
-      "route": "pablogarcor.com/*",
-      "redirect": "www.pablogarcor.com",
-      "statusCode": 301
-    }
-  ]
-}
