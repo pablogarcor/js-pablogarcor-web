@@ -1,7 +1,75 @@
+:root {
+    --page-background-color: #f8f6f0;
+    --page-text-color: #1b222c;
+    --page-link-color: #0f56b3;
+    --page-border-color: rgba(44, 44, 44, 0.82);
+    --page-surface-color: rgba(255, 255, 255, 0.58);
+    --page-surface-hover-color: rgba(255, 255, 255, 0.78);
+    --about-background-color: #E1F7F8;
+    --about-border-color: #1DA1F2;
+    --code-inline-background-color: rgba(15, 86, 179, 0.08);
+    --code-inline-border-color: rgba(15, 86, 179, 0.18);
+    --code-inline-text-color: #173c63;
+    --code-block-background-color: #171b22;
+    --code-block-text-color: #f8f8f2;
+    --code-block-border-color: rgba(27, 34, 44, 0.18);
+    --code-block-shadow-color: rgba(27, 34, 44, 0.14);
+    --code-scrollbar-color: rgba(248, 248, 242, 0.34);
+    --page-background-image:
+            linear-gradient(rgba(27, 34, 44, 0.055) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(27, 34, 44, 0.055) 1px, transparent 1px),
+            radial-gradient(circle at 0 0, rgba(219, 231, 240, 0.95) 0, rgba(234, 240, 243, 0.72) 18rem, transparent 42rem),
+            radial-gradient(circle at 100% 100%, rgba(240, 226, 196, 0.86) 0, rgba(247, 238, 221, 0.62) 20rem, transparent 44rem),
+            linear-gradient(115deg, #f6f9fb 0%, #fbfaf6 48%, #f7efe1 100%);
+    color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+    --page-background-color: #101418;
+    --page-text-color: #e7edf3;
+    --page-link-color: #9ec5ff;
+    --page-border-color: rgba(231, 237, 243, 0.32);
+    --page-surface-color: rgba(12, 18, 24, 0.72);
+    --page-surface-hover-color: rgba(23, 32, 42, 0.88);
+    --about-background-color: #132f46;
+    --about-border-color: #4fa3e8;
+    --code-inline-background-color: rgba(158, 197, 255, 0.14);
+    --code-inline-border-color: rgba(158, 197, 255, 0.22);
+    --code-inline-text-color: #dbeaff;
+    --code-block-background-color: #0d121a;
+    --code-block-text-color: #f8f8f2;
+    --code-block-border-color: rgba(231, 237, 243, 0.16);
+    --code-block-shadow-color: rgba(0, 0, 0, 0.38);
+    --code-scrollbar-color: rgba(248, 248, 242, 0.38);
+    --page-background-image:
+            linear-gradient(rgba(231, 237, 243, 0.055) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(231, 237, 243, 0.055) 1px, transparent 1px),
+            radial-gradient(circle at 0 0, rgba(45, 85, 119, 0.72) 0, rgba(31, 50, 67, 0.48) 18rem, transparent 42rem),
+            radial-gradient(circle at 100% 100%, rgba(126, 83, 34, 0.58) 0, rgba(69, 47, 24, 0.44) 20rem, transparent 44rem),
+            linear-gradient(115deg, #101820 0%, #151719 50%, #211911 100%);
+    color-scheme: dark;
+}
+
+html {
+    min-height: 100%;
+    background: var(--page-background-color);
+}
+
 body {
     font-family: sans-serif;
     font-size: 13px;
     --content-max-width: 58em;
+    min-height: 100vh;
+    color: var(--page-text-color);
+    background-color: var(--page-background-color);
+    background-image: var(--page-background-image);
+    background-size: 72px 72px, 72px 72px, auto, auto, auto;
+    background-position: -1px -1px, -1px -1px, center, center, center;
+    background-attachment: fixed;
+}
+
+a {
+    color: var(--page-link-color);
 }
 
 .container {
@@ -46,8 +114,87 @@ article.container > .date{
     margin-block-start: 0;
 }
 
+article.container > div {
+    min-width: 0;
+}
+
 img{
     width: 100%;
+}
+
+code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.94em;
+}
+
+:not(pre) > code {
+    color: var(--code-inline-text-color);
+    background: var(--code-inline-background-color);
+    border: 1px solid var(--code-inline-border-color);
+    border-radius: 4px;
+    padding: 0.12em 0.3em;
+    overflow-wrap: anywhere;
+    white-space: normal;
+}
+
+.highlight,
+pre {
+    max-width: 100%;
+    min-width: 0;
+}
+
+.highlight {
+    margin: 1.35em 0;
+}
+
+.highlight pre {
+    margin: 0;
+}
+
+pre {
+    box-sizing: border-box;
+    margin: 1.35em 0;
+    padding: 1em 1.1em;
+    overflow-x: auto;
+    color: var(--code-block-text-color) !important;
+    background: var(--code-block-background-color) !important;
+    border: 1px solid var(--code-block-border-color);
+    border-radius: 8px;
+    box-shadow: 0 0.7em 1.8em var(--code-block-shadow-color);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.875rem;
+    line-height: 1.65;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-color: var(--code-scrollbar-color) transparent;
+    scrollbar-width: thin;
+}
+
+pre code {
+    display: block;
+    width: max-content;
+    min-width: 100%;
+    color: inherit;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    font: inherit;
+    overflow-wrap: normal;
+    white-space: pre;
+    word-break: normal;
+}
+
+pre::-webkit-scrollbar {
+    height: 0.7rem;
+}
+
+pre::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+pre::-webkit-scrollbar-thumb {
+    background: var(--code-scrollbar-color);
+    border: 3px solid var(--code-block-background-color);
+    border-radius: 999px;
 }
 
 @media only screen and (min-width: 450px) {
