@@ -25,29 +25,49 @@
 
 .title-container {
     margin: 0 0 0.5em 0;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
 }
 
 nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
-    gap: 1.25em;
+    flex-wrap: wrap;
+    gap: 0.35rem 1.25em;
 }
 
 .nav-container {
     display: block;
+    flex: 1 1 14rem;
+    min-width: 0;
+}
+
+nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.25rem;
+    font-size: 1rem;
 }
 
 #header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    width: min(calc(100% - 2rem), var(--content-max-width));
     max-width: var(--content-max-width);
     margin: 0 auto;
+    padding: 3em 0 1.5em;
 }
 
 .theme-toggle-container {
     display: block;
+    flex: 0 0 auto;
+    margin-left: auto;
 }
 
 .theme-toggle {
@@ -57,15 +77,52 @@ nav {
     border-radius: 999px;
     cursor: pointer;
     font: inherit;
-    padding: 0.35em 0.75em;
+    font-size: 1rem;
+    min-height: 2.25rem;
+    padding: 0.35em 0.8em;
 }
 
 .theme-toggle:hover {
     background: var(--page-surface-hover-color);
 }
 
-@media only screen and (min-width: 768px) {
+@media (hover: none) {
+    .title-container:hover .title-toggleable-part {
+        opacity: 1;
+        transform: initial;
+    }
+
+    .title-container:hover .title-fixed-part:nth-child(3),
+    .title-container:hover .title-fixed-part:nth-child(6) {
+        margin-left: initial;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .title-container {
+        margin-bottom: 0.4em;
+        font-size: 1.15rem;
+        line-height: 1.25;
+    }
+
+    nav {
+        gap: 0.25rem 0.85rem;
+    }
+
+    nav a {
+        min-height: 2.65rem;
+        font-size: 1rem;
+    }
+
     #header {
-        padding: 3em 2em 1.5em;
+        align-items: flex-start;
+        gap: 0.65rem 0.75rem;
+        width: 100%;
+        padding: 1.25rem 1rem 0.9rem;
+    }
+
+    .theme-toggle {
+        font-size: 0.95rem;
+        min-height: 2.5rem;
     }
 }

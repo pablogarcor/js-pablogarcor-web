@@ -2,10 +2,27 @@
     border-bottom: 0.05em solid var(--page-border-color);
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 0.4em 0;
+    align-items: flex-start;
+    gap: 0.35rem 1rem;
+    padding: 0.75em 0;
+    text-decoration: none;
 }
 
 h4 {
+    min-width: 0;
     margin: 0;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+}
+
+.post time {
+    flex: 0 0 auto;
+    color: var(--page-muted-color);
+    font-size: 0.9em;
+}
+
+@media only screen and (max-width: 590px) {
+    .post {
+        flex-direction: column;
+    }
 }
