@@ -1,7 +1,24 @@
+html {
+    min-height: 100%;
+    background: #f8f6f0;
+}
+
 body {
     font-family: sans-serif;
     font-size: 13px;
     --content-max-width: 58em;
+    min-height: 100vh;
+    color: #1b222c;
+    background-color: #f8f6f0;
+    background-image:
+            linear-gradient(rgba(27, 34, 44, 0.055) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(27, 34, 44, 0.055) 1px, transparent 1px),
+            radial-gradient(circle at 0 0, rgba(219, 231, 240, 0.95) 0, rgba(234, 240, 243, 0.72) 18rem, transparent 42rem),
+            radial-gradient(circle at 100% 100%, rgba(240, 226, 196, 0.86) 0, rgba(247, 238, 221, 0.62) 20rem, transparent 44rem),
+            linear-gradient(115deg, #f6f9fb 0%, #fbfaf6 48%, #f7efe1 100%);
+    background-size: 72px 72px, 72px 72px, auto, auto, auto;
+    background-position: -1px -1px, -1px -1px, center, center, center;
+    background-attachment: fixed;
 }
 
 .container {
