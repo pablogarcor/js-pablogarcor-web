@@ -30,6 +30,29 @@
         </nav>
     </div>
     <div class="theme-toggle-container">
-        <span></span>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
     </div>
 </header>
+<script>
+    (function () {
+        var storageKey = "pablogarcor-theme";
+        var root = document.documentElement;
+        var button = document.querySelector(".theme-toggle");
+        var savedTheme = localStorage.getItem(storageKey);
+        var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+        function setTheme(theme) {
+            root.dataset.theme = theme;
+            button.textContent = theme === "dark" ? "Light" : "Dark";
+            button.setAttribute("aria-pressed", theme === "dark");
+        }
+
+        setTheme(savedTheme || (prefersDark ? "dark" : "light"));
+
+        button.addEventListener("click", function () {
+            var nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
+            localStorage.setItem(storageKey, nextTheme);
+            setTheme(nextTheme);
+        });
+    }());
+</script>

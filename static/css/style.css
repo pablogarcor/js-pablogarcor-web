@@ -1,6 +1,42 @@
+:root {
+    --page-background-color: #f8f6f0;
+    --page-text-color: #1b222c;
+    --page-link-color: #0f56b3;
+    --page-border-color: rgba(44, 44, 44, 0.82);
+    --page-surface-color: rgba(255, 255, 255, 0.58);
+    --page-surface-hover-color: rgba(255, 255, 255, 0.78);
+    --about-background-color: #E1F7F8;
+    --about-border-color: #1DA1F2;
+    --page-background-image:
+            linear-gradient(rgba(27, 34, 44, 0.055) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(27, 34, 44, 0.055) 1px, transparent 1px),
+            radial-gradient(circle at 0 0, rgba(219, 231, 240, 0.95) 0, rgba(234, 240, 243, 0.72) 18rem, transparent 42rem),
+            radial-gradient(circle at 100% 100%, rgba(240, 226, 196, 0.86) 0, rgba(247, 238, 221, 0.62) 20rem, transparent 44rem),
+            linear-gradient(115deg, #f6f9fb 0%, #fbfaf6 48%, #f7efe1 100%);
+    color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+    --page-background-color: #101418;
+    --page-text-color: #e7edf3;
+    --page-link-color: #9ec5ff;
+    --page-border-color: rgba(231, 237, 243, 0.32);
+    --page-surface-color: rgba(12, 18, 24, 0.72);
+    --page-surface-hover-color: rgba(23, 32, 42, 0.88);
+    --about-background-color: #132f46;
+    --about-border-color: #4fa3e8;
+    --page-background-image:
+            linear-gradient(rgba(231, 237, 243, 0.055) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(231, 237, 243, 0.055) 1px, transparent 1px),
+            radial-gradient(circle at 0 0, rgba(45, 85, 119, 0.72) 0, rgba(31, 50, 67, 0.48) 18rem, transparent 42rem),
+            radial-gradient(circle at 100% 100%, rgba(126, 83, 34, 0.58) 0, rgba(69, 47, 24, 0.44) 20rem, transparent 44rem),
+            linear-gradient(115deg, #101820 0%, #151719 50%, #211911 100%);
+    color-scheme: dark;
+}
+
 html {
     min-height: 100%;
-    background: #f8f6f0;
+    background: var(--page-background-color);
 }
 
 body {
@@ -8,17 +44,16 @@ body {
     font-size: 13px;
     --content-max-width: 58em;
     min-height: 100vh;
-    color: #1b222c;
-    background-color: #f8f6f0;
-    background-image:
-            linear-gradient(rgba(27, 34, 44, 0.055) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(27, 34, 44, 0.055) 1px, transparent 1px),
-            radial-gradient(circle at 0 0, rgba(219, 231, 240, 0.95) 0, rgba(234, 240, 243, 0.72) 18rem, transparent 42rem),
-            radial-gradient(circle at 100% 100%, rgba(240, 226, 196, 0.86) 0, rgba(247, 238, 221, 0.62) 20rem, transparent 44rem),
-            linear-gradient(115deg, #f6f9fb 0%, #fbfaf6 48%, #f7efe1 100%);
+    color: var(--page-text-color);
+    background-color: var(--page-background-color);
+    background-image: var(--page-background-image);
     background-size: 72px 72px, 72px 72px, auto, auto, auto;
     background-position: -1px -1px, -1px -1px, center, center, center;
     background-attachment: fixed;
+}
+
+a {
+    color: var(--page-link-color);
 }
 
 .container {

@@ -50,6 +50,20 @@ nav {
     display: block;
 }
 
+.theme-toggle {
+    color: var(--page-text-color);
+    background: var(--page-surface-color);
+    border: 1px solid var(--page-border-color);
+    border-radius: 999px;
+    cursor: pointer;
+    font: inherit;
+    padding: 0.35em 0.75em;
+}
+
+.theme-toggle:hover {
+    background: var(--page-surface-hover-color);
+}
+
 @media only screen and (min-width: 768px) {
     #header {
         padding: 3em 2em 1.5em;
