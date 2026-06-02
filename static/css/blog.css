@@ -6,22 +6,35 @@ ul{
 
 .post__container{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
+    gap: 0.75rem;
     text-decoration: none;
-    border-bottom: 1px solid #2c2c2c;
-    padding: 0.4em;
+    border-bottom: 1px solid var(--page-border-color);
+    padding: 0.75em 0.2em;
 }
 
 .post__container > h3{
+    min-width: 0;
     margin: 0;
+    font-size: 1rem;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
 }
 
 .post__container > time{
+    flex: 0 0 auto;
     display: none;
+    color: var(--page-muted-color);
+    font-size: var(--font-size-meta);
+    line-height: 1.5;
 }
 
 @media only screen and (min-width: 768px){
+    .post__container{
+        align-items: center;
+    }
+
     .post__container > time{
         display: initial;
     }
