@@ -11,6 +11,7 @@
 h4 {
     min-width: 0;
     margin: 0;
+    font-size: 1rem;
     line-height: 1.35;
     overflow-wrap: anywhere;
 }
@@ -18,7 +19,8 @@ h4 {
 .post time {
     flex: 0 0 auto;
     color: var(--page-muted-color);
-    font-size: 0.9em;
+    font-size: var(--font-size-meta);
+    line-height: 1.5;
 }
 
 @media only screen and (max-width: 590px) {
