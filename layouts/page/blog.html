@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ .Site.Language.Lang }}">
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,18 +11,23 @@
   <body>
     {{ partial "header.html" . }}
     <div class="container">
-      {{ range (where .Site.RegularPages "Section" "blog").GroupByDate "2006" }}
+      {{ $posts := where .Site.RegularPages "Section" "blog" }}
+      {{ if $posts }}
+      {{ range $posts.GroupByDate "2006" }}
       <h3>{{ .Key }}</h3>
       <ul>
         {{ range .Pages }}
         <li>
           <a class="post__container" href="{{ .Permalink }}">
             <h3>{{ .Title }}</h3>
-            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Mon, Jan 2, 2006" }}</time>
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ partial "post-date.html" . }}</time>
           </a>
         </li>
         {{ end }}
       </ul>
+      {{ end }}
+      {{ else }}
+      <p>{{ i18n "no_posts" }}</p>
       {{ end }}
     </div>
   </body>

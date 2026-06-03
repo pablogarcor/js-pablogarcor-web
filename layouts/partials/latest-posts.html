@@ -2,13 +2,18 @@
     <link rel="stylesheet" href="/css/latest-posts.css">
 </head>
 <div>
-    <h1>Latest Posts</h1>
+    <h1>{{ i18n "latest_posts" }}</h1>
     <div>
-        {{ range first 5 (where .Site.RegularPages "Section" "blog") }}
+        {{ $posts := first 5 (where .Site.RegularPages "Section" "blog") }}
+        {{ if $posts }}
+        {{ range $posts }}
         <a class="post" href="{{ .Permalink }}">
             <h4>{{ .Title }}</h4>
-            <time>{{ .Date.Format "January 2, 2006" }}</time>
+            <time>{{ partial "post-date.html" . }}</time>
         </a>
+        {{ end }}
+        {{ else }}
+        <p>{{ i18n "no_posts" }}</p>
         {{ end }}
     </div>
 </div>
