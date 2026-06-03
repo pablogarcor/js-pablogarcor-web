@@ -1,0 +1,35 @@
+[nav_home]
+other = "Home"
+
+[nav_about]
+other = "About me"
+
+[nav_blog]
+other = "Blog"
+
+[latest_posts]
+other = "Latest Posts"
+
+[no_posts]
+other = "No posts yet."
+
+[back_to_homepage]
+other = "Back to homepage"
+
+[made_by]
+other = "Made by Pablo Garcia Ortega"
+
+[contact_me]
+other = "Me"
+
+[language_switcher]
+other = "Language"
+
+[theme_toggle]
+other = "Toggle dark mode"
+
+[theme_dark]
+other = "Dark"
+
+[theme_light]
+other = "Light"

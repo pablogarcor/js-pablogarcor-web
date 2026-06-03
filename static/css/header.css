@@ -25,33 +25,142 @@
 
 .title-container {
     margin: 0 0 0.5em 0;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
 }
 
 nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
-    gap: 1.25em;
+    flex-wrap: wrap;
+    gap: 0.35rem 1.25em;
 }
 
 .nav-container {
     display: block;
+    flex: 1 1 14rem;
+    min-width: 0;
+}
+
+nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.25rem;
+    font-size: 1rem;
+    line-height: 1.35;
 }
 
 #header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    width: min(calc(100% - 2rem), var(--content-max-width));
     max-width: var(--content-max-width);
     margin: 0 auto;
+    padding-block: 3em 1.5em;
+    padding-inline: 0;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+    gap: 0.65rem;
+    margin-left: auto;
+}
+
+.language-switcher {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.95rem;
+}
+
+.language-switcher a,
+.language-switcher span {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.25rem;
+    line-height: 1.35;
+}
+
+.language-switcher span[aria-current="true"] {
+    font-weight: 700;
 }
 
 .theme-toggle-container {
     display: block;
+    flex: 0 0 auto;
 }
 
-@media only screen and (min-width: 768px) {
+.theme-toggle {
+    color: var(--page-text-color);
+    background: var(--page-surface-color);
+    border: 1px solid var(--page-border-color);
+    border-radius: 999px;
+    cursor: pointer;
+    font: inherit;
+    font-size: 1rem;
+    line-height: 1.35;
+    min-height: 2.25rem;
+    padding: 0.35em 0.8em;
+}
+
+.theme-toggle:hover {
+    background: var(--page-surface-hover-color);
+}
+
+@media (hover: none) {
+    .title-container:hover .title-toggleable-part {
+        opacity: 1;
+        transform: initial;
+    }
+
+    .title-container:hover .title-fixed-part:nth-child(3),
+    .title-container:hover .title-fixed-part:nth-child(6) {
+        margin-left: initial;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .title-container {
+        margin-bottom: 0.4em;
+        font-size: 1.1rem;
+        line-height: 1.25;
+    }
+
+    nav {
+        gap: 0.25rem 0.85rem;
+    }
+
+    nav a {
+        min-height: 2.65rem;
+        font-size: 1rem;
+    }
+
     #header {
-        padding: 3em 2em 1.5em;
+        align-items: flex-start;
+        gap: 0.65rem 0.75rem;
+        width: 100%;
+        padding: 1.25rem 1rem 0.9rem;
+    }
+
+    .theme-toggle {
+        font-size: 1rem;
+        min-height: 2.5rem;
+    }
+
+    .header-actions {
+        gap: 0.55rem;
+    }
+
+    .language-switcher a,
+    .language-switcher span {
+        min-height: 2.5rem;
     }
 }

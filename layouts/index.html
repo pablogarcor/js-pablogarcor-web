@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ .Site.Language.Lang }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
-    <title>Pablogarcor web</title>
+    <title>{{ .Site.Title }}</title>
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
@@ -22,7 +22,7 @@
     <div>
         <h1>
             {{ $presentationContentPage := .Site.GetPage "/presentation.md" }}
-            {{ if $presentationContentPage }}
+            {{ with $presentationContentPage }}
             {{ $presentationContentPage.Content }}
             {{ end }}
         </h1>
@@ -30,17 +30,9 @@
 
     {{ partial "latest-posts.html" . }}
 
-    <div
-            id="about"
-            style="
-          padding:1em;
-    border-radius: 1em;
-    background: #E1F7F8;
-    margin-top:4em;
-    border: 0.01em solid #1DA1F2;
-          ">
+    <div id="about">
         {{ $aboutContentPage := .Site.GetPage "/about.md" }}
-        {{ if $aboutContentPage }}
+        {{ with $aboutContentPage }}
         {{ $aboutContentPage.Content }}
         {{ end }}
     </div>

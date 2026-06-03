@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ .Site.Language.Lang }}">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,11 +11,11 @@
         {{ partial "header.html" . }}
         <article class="container">
             <h1>{{ .Title }}</h1>
-            <p class="date">{{ .Date.Format "January 2, 2006" }}</p>
+            <p class="date">{{ partial "post-date.html" . }}</p>
             <div>
                 {{ .Content }}
             </div>
-            <a href="/">Back to homepage</a>
+            <a href="{{ "/" | relLangURL }}">{{ i18n "back_to_homepage" }}</a>
         </article>
     </body>
 </html>
