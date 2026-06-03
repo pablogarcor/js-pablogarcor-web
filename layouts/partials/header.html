@@ -2,6 +2,16 @@
     <link rel="stylesheet" href="/css/header.css">
 </head>
 <header id="header">
+    {{ $homeURL := "/" | relLangURL }}
+    {{ $isSpanish := eq .Site.Language.Lang "es" }}
+    {{ $currentLanguageLabel := cond $isSpanish "ES" "EN" }}
+    {{ $alternateLanguageLabel := cond $isSpanish "EN" "ES" }}
+    {{ $alternateLanguageURL := cond $isSpanish "/" "/es/" }}
+    {{ with .Translations }}
+    {{ with index . 0 }}
+    {{ $alternateLanguageURL = .RelPermalink }}
+    {{ end }}
+    {{ end }}
     <div class="nav-container">
         <div class="title-container">
             <span class="title-fixed-part">Pablo</span><span class="title-toggleable-part">&nbsp;</span><span
@@ -11,13 +21,13 @@
         </div>
         <nav>
             <div>
-                <a href="/">Home</a>
+                <a href="{{ $homeURL }}">{{ i18n "nav_home" }}</a>
             </div>
             <div>
-                <a href="/#about">About me</a>
+                <a href="{{ $homeURL }}#about">{{ i18n "nav_about" }}</a>
             </div>
             <div>
-                <a href="/blog">Blog</a>
+                <a href="{{ "/blog" | relLangURL }}">{{ i18n "nav_blog" }}</a>
             </div>
             <!--
             <div>
@@ -29,8 +39,26 @@
             -->
         </nav>
     </div>
-    <div class="theme-toggle-container">
-        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+    <div class="header-actions">
+        <div class="language-switcher" aria-label="{{ i18n "language_switcher" }}">
+            {{ if $isSpanish }}
+            <a href="{{ $alternateLanguageURL }}">{{ $alternateLanguageLabel }}</a>
+            <span aria-current="true">{{ $currentLanguageLabel }}</span>
+            {{ else }}
+            <span aria-current="true">{{ $currentLanguageLabel }}</span>
+            <a href="{{ $alternateLanguageURL }}">{{ $alternateLanguageLabel }}</a>
+            {{ end }}
+        </div>
+        <div class="theme-toggle-container">
+            <button
+                    class="theme-toggle"
+                    type="button"
+                    aria-label="{{ i18n "theme_toggle" }}"
+                    aria-pressed="false"
+                    data-dark-label="{{ i18n "theme_dark" }}"
+                    data-light-label="{{ i18n "theme_light" }}"
+            >{{ i18n "theme_dark" }}</button>
+        </div>
     </div>
 </header>
 <script>
@@ -38,12 +66,18 @@
         var storageKey = "pablogarcor-theme";
         var root = document.documentElement;
         var button = document.querySelector(".theme-toggle");
+        if (!button) {
+            return;
+        }
+
+        var darkLabel = button.getAttribute("data-dark-label");
+        var lightLabel = button.getAttribute("data-light-label");
         var savedTheme = localStorage.getItem(storageKey);
         var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
 
         function setTheme(theme) {
             root.dataset.theme = theme;
-            button.textContent = theme === "dark" ? "Light" : "Dark";
+            button.textContent = theme === "dark" ? lightLabel : darkLabel;
             button.setAttribute("aria-pressed", theme === "dark");
         }
 

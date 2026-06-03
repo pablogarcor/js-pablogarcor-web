@@ -66,10 +66,36 @@ nav a {
     padding-inline: 0;
 }
 
+.header-actions {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+    gap: 0.65rem;
+    margin-left: auto;
+}
+
+.language-switcher {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.95rem;
+}
+
+.language-switcher a,
+.language-switcher span {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.25rem;
+    line-height: 1.35;
+}
+
+.language-switcher span[aria-current="true"] {
+    font-weight: 700;
+}
+
 .theme-toggle-container {
     display: block;
     flex: 0 0 auto;
-    margin-left: auto;
 }
 
 .theme-toggle {
@@ -126,6 +152,15 @@ nav a {
 
     .theme-toggle {
         font-size: 1rem;
+        min-height: 2.5rem;
+    }
+
+    .header-actions {
+        gap: 0.55rem;
+    }
+
+    .language-switcher a,
+    .language-switcher span {
         min-height: 2.5rem;
     }
 }
