@@ -16,6 +16,12 @@ other = "No posts yet."
 [back_to_homepage]
 other = "Back to homepage"
 
+[published_on]
+other = "Published:"
+
+[updated_on]
+other = "Updated:"
+
 [made_by]
 other = "Made by Pablo Garcia Ortega"
 
