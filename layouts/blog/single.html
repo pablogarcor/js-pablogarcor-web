@@ -11,7 +11,12 @@
         {{ partial "header.html" . }}
         <article class="container">
             <h1>{{ .Title }}</h1>
-            <p class="date">{{ partial "post-date.html" . }}</p>
+            <p class="date">
+                <span>{{ i18n "published_on" }} <time datetime="{{ .Date.Format "2006-01-02" }}">{{ partial "post-date.html" . }}</time></span>
+                {{- if .Params.lastmod }}
+                <span>{{ i18n "updated_on" }} <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ partial "post-lastmod.html" . }}</time></span>
+                {{- end }}
+            </p>
             <div>
                 {{ .Content }}
             </div>
