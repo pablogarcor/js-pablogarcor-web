@@ -186,10 +186,21 @@ article.container li + li {
 }
 
 article.container > .date{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     margin-block-start: 0;
     color: var(--page-muted-color);
     font-size: var(--font-size-meta);
     line-height: 1.5;
+}
+
+article.container > .date time {
+    color: inherit;
+}
+
+article.container > .date > span {
+    white-space: nowrap;
 }
 
 article.container > div {
