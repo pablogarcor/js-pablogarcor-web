@@ -820,15 +820,27 @@ pre::-webkit-scrollbar-thumb {
     }
 
     .site-footer__meta {
-        align-items: flex-start;
-        flex-direction: column;
-        justify-content: flex-start;
-        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
         margin-top: 2.5rem;
+        font-size: 0.75rem;
+        text-align: center;
+    }
+
+    .site-footer__name {
+        font-size: 0.9rem;
+        white-space: nowrap;
     }
 
     .site-footer__built-with {
-        justify-content: flex-start;
+        justify-content: center;
+        gap: 0.45rem;
+        white-space: nowrap;
+    }
+
+    .site-footer__built-with img {
+        width: 3.25rem;
     }
 
     .post-shell {
