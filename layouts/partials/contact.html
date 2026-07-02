@@ -1,6 +1,4 @@
-<head>
-    <link rel="stylesheet" href="/css/contact.css">
-</head>
+{{ $aboutURL := printf "%s#about" ("/" | relLangURL) }}
 <div
 
         class="email__container"
@@ -19,7 +17,7 @@
                 <a
                         onmouseenter="changeColor('red','name')"
                         onmouseleave="changeColor('inherit','name')"
-                        href="#about"
+                        href="{{ $aboutURL }}"
 
                         style="
                     margin-block-start: 1em;
