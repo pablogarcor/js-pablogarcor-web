@@ -8,7 +8,16 @@ other = "Sobre mí"
 other = "Blog"
 
 [latest_posts]
-other = "Últimos Posts"
+other = "Últimos posts"
+
+[view_all_posts]
+other = "Ver todo"
+
+[read_my_notes]
+other = "Leer mis posts"
+
+[about_console_label]
+other = "Sobre mí"
 
 [no_posts]
 other = "Todavía no hay posts."

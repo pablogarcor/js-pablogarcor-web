@@ -10,6 +10,15 @@ other = "Blog"
 [latest_posts]
 other = "Latest Posts"
 
+[view_all_posts]
+other = "View all"
+
+[read_my_notes]
+other = "Read my posts"
+
+[about_console_label]
+other = "About"
+
 [no_posts]
 other = "No posts yet."
 

@@ -17,6 +17,17 @@
     font-size: 1.5rem;
 }
 
+.latest-posts__header a {
+    flex: 0 0 auto;
+    color: var(--page-link-color);
+    font-size: var(--font-size-meta);
+    text-decoration: none;
+}
+
+.latest-posts__header a:hover {
+    opacity: 0.72;
+}
+
 .latest-posts__list {
     display: flex;
     flex-direction: column;
