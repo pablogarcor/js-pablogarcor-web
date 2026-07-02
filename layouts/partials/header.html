@@ -1,17 +1,18 @@
-<head>
-    <link rel="stylesheet" href="/css/header.css">
-</head>
 <header id="header">
     {{ $homeURL := "/" | relLangURL }}
+    {{ $blogURL := "/blog" | relLangURL }}
     {{ $isSpanish := eq .Site.Language.Lang "es" }}
     {{ $currentLanguageLabel := cond $isSpanish "ES" "EN" }}
     {{ $alternateLanguageLabel := cond $isSpanish "EN" "ES" }}
     {{ $alternateLanguageURL := cond $isSpanish "/" "/es/" }}
+    {{ $isHome := .IsHome }}
+    {{ $isBlog := or (eq .Section "blog") (eq .Layout "blog") }}
     {{ with .Translations }}
     {{ with index . 0 }}
     {{ $alternateLanguageURL = .RelPermalink }}
     {{ end }}
     {{ end }}
+    <div class="header-inner">
     <div class="nav-container">
         <div class="title-container">
             <span class="title-fixed-part">Pablo</span><span class="title-toggleable-part">&nbsp;</span><span
@@ -21,13 +22,13 @@
         </div>
         <nav>
             <div>
-                <a href="{{ $homeURL }}">{{ i18n "nav_home" }}</a>
+                <a href="{{ $homeURL }}"{{ if $isHome }} aria-current="page"{{ end }}>{{ i18n "nav_home" }}</a>
             </div>
             <div>
                 <a href="{{ $homeURL }}#about">{{ i18n "nav_about" }}</a>
             </div>
             <div>
-                <a href="{{ "/blog" | relLangURL }}">{{ i18n "nav_blog" }}</a>
+                <a href="{{ $blogURL }}"{{ if $isBlog }} aria-current="page"{{ end }}>{{ i18n "nav_blog" }}</a>
             </div>
             <!--
             <div>
@@ -57,8 +58,9 @@
                     aria-pressed="false"
                     data-dark-label="{{ i18n "theme_dark" }}"
                     data-light-label="{{ i18n "theme_light" }}"
-            >{{ i18n "theme_dark" }}</button>
+            ><span class="theme-toggle__label">{{ i18n "theme_dark" }}</span><span class="theme-toggle__knob" aria-hidden="true"></span></button>
         </div>
+    </div>
     </div>
 </header>
 <script>
@@ -75,9 +77,13 @@
         var savedTheme = localStorage.getItem(storageKey);
         var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
 
+        var label = button.querySelector(".theme-toggle__label");
+
         function setTheme(theme) {
             root.dataset.theme = theme;
-            button.textContent = theme === "dark" ? lightLabel : darkLabel;
+            if (label) {
+                label.textContent = theme === "dark" ? lightLabel : darkLabel;
+            }
             button.setAttribute("aria-pressed", theme === "dark");
         }
 

@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/latest-posts.css">
+    <link rel="stylesheet" href="/css/contact.css">
     <title>{{ .Site.Title }}</title>
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
@@ -13,33 +16,29 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 </head>
-<body>
+<body class="home-page">
 
 {{ partial "header.html" . }}
-<div
-        class="container"
->
-    <div>
-        <h1>
+<main class="container">
+    <section class="home-intro">
             {{ $presentationContentPage := .Site.GetPage "/presentation.md" }}
             {{ with $presentationContentPage }}
             {{ $presentationContentPage.Content }}
             {{ end }}
-        </h1>
-    </div>
+    </section>
 
     {{ partial "latest-posts.html" . }}
 
-    <div id="about">
+    <section id="about">
         {{ $aboutContentPage := .Site.GetPage "/about.md" }}
         {{ with $aboutContentPage }}
         {{ $aboutContentPage.Content }}
         {{ end }}
-    </div>
+    </section>
 
     {{ partial "footer.html" . }}
 
 
-</div>
+</main>
 </body>
 </html>

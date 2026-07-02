@@ -1,9 +1,8 @@
-<head>
-    <link rel="stylesheet" href="/css/latest-posts.css">
-</head>
-<div>
-    <h1>{{ i18n "latest_posts" }}</h1>
-    <div>
+<section class="latest-posts">
+    <div class="latest-posts__header">
+        <h2>{{ i18n "latest_posts" }}</h2>
+    </div>
+    <div class="latest-posts__list">
         {{ $posts := first 5 (where .Site.RegularPages "Section" "blog") }}
         {{ if $posts }}
         {{ range $posts }}
@@ -16,4 +15,4 @@
         <p>{{ i18n "no_posts" }}</p>
         {{ end }}
     </div>
-</div>
+</section>
