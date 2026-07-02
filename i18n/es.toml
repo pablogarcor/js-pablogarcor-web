@@ -8,13 +8,28 @@ other = "Sobre mí"
 other = "Blog"
 
 [latest_posts]
-other = "Últimos Posts"
+other = "Últimos posts"
+
+[view_all_posts]
+other = "Ver todo"
+
+[read_my_notes]
+other = "Leer mis posts"
+
+[about_console_label]
+other = "Sobre mí"
 
 [no_posts]
 other = "Todavía no hay posts."
 
 [back_to_homepage]
 other = "Volver al inicio"
+
+[share_post]
+other = "Compartir post"
+
+[post_permalink]
+other = "Enlace permanente"
 
 [published_on]
 other = "Publicado:"
@@ -24,6 +39,9 @@ other = "Actualizado:"
 
 [made_by]
 other = "Hecho por Pablo Garcia Ortega"
+
+[built_with_hugo]
+other = "Built with Hugo"
 
 [contact_me]
 other = "Yo"

@@ -10,11 +10,26 @@ other = "Blog"
 [latest_posts]
 other = "Latest Posts"
 
+[view_all_posts]
+other = "View all"
+
+[read_my_notes]
+other = "Read my posts"
+
+[about_console_label]
+other = "About"
+
 [no_posts]
 other = "No posts yet."
 
 [back_to_homepage]
 other = "Back to homepage"
+
+[share_post]
+other = "Share post"
+
+[post_permalink]
+other = "Post permalink"
 
 [published_on]
 other = "Published:"
@@ -24,6 +39,9 @@ other = "Updated:"
 
 [made_by]
 other = "Made by Pablo Garcia Ortega"
+
+[built_with_hugo]
+other = "Built with Hugo"
 
 [contact_me]
 other = "Me"

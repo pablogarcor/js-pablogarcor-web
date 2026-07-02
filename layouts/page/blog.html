@@ -5,16 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/blog.css">
     <title>{{ .Title }}</title>
   </head>
-  <body>
+  <body class="blog-archive-page">
     {{ partial "header.html" . }}
-    <div class="container">
+    <main class="container blog-archive">
       {{ $posts := where .Site.RegularPages "Section" "blog" }}
       {{ if $posts }}
       {{ range $posts.GroupByDate "2006" }}
-      <h3>{{ .Key }}</h3>
+      <section class="archive-year">
+      <h2>{{ .Key }}</h2>
       <ul>
         {{ range .Pages }}
         <li>
@@ -25,10 +27,11 @@
         </li>
         {{ end }}
       </ul>
+      </section>
       {{ end }}
       {{ else }}
       <p>{{ i18n "no_posts" }}</p>
       {{ end }}
-    </div>
+    </main>
   </body>
 </html>
