@@ -1,11 +1,16 @@
 <footer class="site-footer">
-    {{ partial "contact.html" . }}
-    <div class="site-footer__made-by">
-        <p>{{ i18n "made_by" }}</p>
-        {{ with resources.Get "logos/hugo-logo.svg" }}
-        <a href="https://gohugo.io/" target="_blank">
-            <img src="{{ .RelPermalink }}" alt="HUGO Logo">
-        </a>
-        {{ end }}
+    <div class="site-footer__inner">
+        {{ partial "contact.html" . }}
+        <div class="site-footer__meta">
+            <span class="site-footer__name">Pablo García Ortega</span>
+            <div class="site-footer__built-with">
+                <span>{{ i18n "built_with_hugo" }}</span>
+                {{ with resources.Get "logos/hugo-logo.svg" }}
+                <a href="https://gohugo.io/" target="_blank" rel="noreferrer">
+                    <img src="{{ .RelPermalink }}" alt="HUGO Logo">
+                </a>
+                {{ end }}
+            </div>
+        </div>
     </div>
 </footer>

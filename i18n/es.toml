@@ -34,6 +34,9 @@ other = "Actualizado:"
 [made_by]
 other = "Hecho por Pablo Garcia Ortega"
 
+[built_with_hugo]
+other = "Built with Hugo"
+
 [contact_me]
 other = "Yo"
 
