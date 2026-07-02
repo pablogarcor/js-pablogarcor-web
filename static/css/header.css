@@ -240,7 +240,7 @@
 }
 
 .theme-toggle[data-theme="dark"] .theme-toggle__thumb {
-    transform: translate(1.5rem, -50%);
+    transform: translate(1.3rem, -50%);
 }
 
 .theme-toggle__icon--moon {
