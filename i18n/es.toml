@@ -25,6 +25,12 @@ other = "Todavía no hay posts."
 [back_to_homepage]
 other = "Volver al inicio"
 
+[share_post]
+other = "Compartir post"
+
+[post_permalink]
+other = "Enlace permanente"
+
 [published_on]
 other = "Publicado:"
 

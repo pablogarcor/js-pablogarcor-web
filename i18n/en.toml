@@ -25,6 +25,12 @@ other = "No posts yet."
 [back_to_homepage]
 other = "Back to homepage"
 
+[share_post]
+other = "Share post"
+
+[post_permalink]
+other = "Post permalink"
+
 [published_on]
 other = "Published:"
 
