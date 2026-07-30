@@ -1,11 +1,14 @@
 ---
 title: "How I Routed One OpenWrt Wi-Fi Network Through CyberGhost"
 date: 2026-07-25
+lastmod: 2026-07-30
 slug: "openwrt-cyberghost-vpn-wifi"
 author: "Pablo García Ortega"
 tags: ["OpenWrt", "CyberGhost", "OpenVPN", "Networking", "PBR"]
 description: "How I configured a Xiaomi AX3600 running OpenWrt so one isolated Wi-Fi SSID uses CyberGhost OpenVPN with PBR and a kill switch, while the rest of my network keeps using the normal ISP connection."
 ---
+
+> **Update — July 30, 2026:** After publishing this guide, I found a DNS problem in the final hardened configuration: clients could still reach Internet addresses by IP, but domain names stopped working after reconnecting to the SSID. [Jump to the updated DNS fix.](#update-july-30-2026-dns-fix-after-hardening-the-firewall)
 
 I wanted one WiFi network at home to always use CyberGhost, but I did not want to send all my home traffic through the VPN.
 
@@ -349,6 +352,8 @@ Once I had access again, I rebuilt the VPN Wi-Fi layer by layer and checked `ip 
 
 I configured DHCP for the isolated subnet:
 
+> **Updated July 30, 2026:** The `dhcp_option` line below is part of the correction. I originally described public DNS as optional, but that was wrong once the firewall input policy was changed to `REJECT`. [The full explanation is in the update below.](#update-july-30-2026-dns-fix-after-hardening-the-firewall)
+
 ```sh
 uci -q delete dhcp.vpnwifi
 uci set dhcp.vpnwifi='dhcp'
@@ -359,19 +364,12 @@ uci set dhcp.vpnwifi.leasetime='12h'
 uci set dhcp.vpnwifi.dhcpv4='server'
 uci set dhcp.vpnwifi.force='1'
 uci set dhcp.vpnwifi.ignore='0'
+uci add_list dhcp.vpnwifi.dhcp_option='6,1.1.1.1,1.0.0.1'
 uci commit dhcp
 service dnsmasq restart
 ```
 
-This gives clients addresses starting at `192.168.50.100`.
-
-I also advertised public DNS servers to these clients. This part is optional:
-
-```sh
-uci add_list dhcp.vpnwifi.dhcp_option='6,1.1.1,1.0.0.1'
-uci commit dhcp
-service dnsmasq restart
-```
+This gives clients addresses starting at `192.168.50.100` and advertises `1.1.1.1` and `1.0.0.1` as their DNS servers. DHCP option `6` is the DNS server option.
 
 Do not add the same DHCP option several times.
 
@@ -458,7 +456,73 @@ uci commit firewall
 service firewall restart
 ```
 
-If the clients use the router itself for DNS instead of the DNS servers advertised by DHCP, they also need an explicit TCP/UDP port `53` input rule.
+The final configuration in this article does not open TCP/UDP port `53` from `vpnwifi` to the router. Clients use the public DNS servers advertised by DHCP instead.
+
+## Update July 30 2026: DNS Fix After Hardening the Firewall
+
+On July 29, after I thought the setup was finished, the `CyberGhost` Wi-Fi looked broken again. A client joined the SSID, received an address such as `192.168.50.120/24`, and had the expected gateway:
+
+```text
+default via 192.168.50.1
+```
+
+However, websites did not load and DNS returned errors such as `SERVFAIL` or `connection refused`.
+
+The important detail was that this was not a complete loss of connectivity. A direct ping to a public IP still worked:
+
+```sh
+ping -c 3 1.1.1.1
+```
+
+Queries sent explicitly to public DNS servers also worked:
+
+```sh
+nslookup openwrt.org 1.1.1.1
+nslookup openwrt.org 1.0.0.1
+```
+
+But a query sent to the router failed:
+
+```sh
+nslookup openwrt.org 192.168.50.1
+```
+
+On OpenWrt, `dnsmasq` was listening on `192.168.50.1:53`, but the hardened firewall zone had:
+
+```text
+firewall.vpnwifi.input='REJECT'
+```
+
+There was no input rule allowing port `53`. During the earlier setup, `vpnwifi.input='ACCEPT'` had allowed clients to use the router as DNS. After hardening the zone, DHCP could still give `192.168.50.1` to a client as its implicit DNS server, but the firewall rejected the queries.
+
+An older DHCP lease, temporary DNS configuration or client cache can hide this problem for a while. That is why it became visible only after reconnecting to the Wi-Fi.
+
+The fix I applied was to replace any existing DNS option and explicitly advertise public DNS servers:
+
+```sh
+uci -q delete dhcp.vpnwifi.dhcp_option
+uci add_list dhcp.vpnwifi.dhcp_option='6,1.1.1.1,1.0.0.1'
+uci commit dhcp
+service dnsmasq restart
+```
+
+Then the client must renew its DHCP lease. Disconnecting and reconnecting to the SSID is enough. On my Linux client with NetworkManager I used:
+
+```sh
+nmcli device disconnect wlp4s0
+nmcli device connect wlp4s0
+resolvectl status wlp4s0
+```
+
+The last command should show:
+
+```text
+DNS Servers: 1.1.1.1 1.0.0.1
+```
+
+With this correction, DNS requests are still normal client traffic from `192.168.50.0/24`, so PBR sends them through `tun0` like the rest of the traffic. The firewall remains hardened, and the kill switch is not weakened.
+
+Another possible solution is to open TCP/UDP port `53` from `vpnwifi` to the router and use OpenWrt as DNS. I did not choose that final configuration. Requests forwarded by `dnsmasq` become traffic originated by the router and could use the normal `lan1` uplink unless an additional policy forces and verifies them through the VPN. That could create a DNS leak.
 
 ## 9. Create the vpn Firewall Zone and Kill Switch
 
@@ -576,6 +640,8 @@ ip addr show tun0
 logread -e openvpn | tail -20
 service pbr status
 uci get pbr.config.uplink_interface
+uci show dhcp.vpnwifi
+uci show firewall.vpnwifi
 ```
 
 The expected state was:
@@ -585,6 +651,8 @@ The expected state was:
 * OpenVPN had completed its initialization.
 * PBR was running.
 * The PBR uplink was `lan1`.
+* DHCP advertised `1.1.1.1` and `1.0.0.1`.
+* The `vpnwifi` input policy was still `REJECT`.
 
 Then I tested the two wfi networks.
 
@@ -597,6 +665,7 @@ On the `CyberGhost` WiFi:
 
 * The client received a `192.168.50.x` address.
 * Its gateway was `192.168.50.1`.
+* Its DNS servers were `1.1.1.1` and `1.0.0.1`.
 * `ping 1.1.1.1` worked.
 * DNS resolution worked.
 * Its public IP was a CyberGhost address, not the ISP address.
@@ -653,7 +722,7 @@ A wrong clock or a broken CA/TLS state can make all HTTPS package feeds fail at 
 
 ## Conclusion
 
-The final result is exactly what I wanted: normal devices use the normal Internet connection, and devices connected to the `CyberGhost` SSID leave through OpenVPN.
+After correcting the DHCP DNS option, the final result is exactly what I wanted: normal devices use the normal Internet connection, and devices connected to the `CyberGhost` SSID leave through OpenVPN.
 
 The most important part is not PBR or even OpenVPN. For me, it is keeping the routing rules simple and checking them after every change. The router's `vpnwifi` interface installs no default route, it has no forwarding to the normal uplink, and the design fails closed when `tun0` is down. The clients still use `192.168.50.1` as their gateway, of course.
 
