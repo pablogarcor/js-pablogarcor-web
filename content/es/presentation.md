@@ -1,5 +1,8 @@
 +++
 title = "Presentación"
+[_build]
+list = "never"
+render = "never"
 +++
 
 # Hola, soy Pablo.

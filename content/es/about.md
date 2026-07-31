@@ -1,5 +1,8 @@
 +++
 title = "Sobre mí"
+[_build]
+list = "never"
+render = "never"
 +++
 
 ## Sobre mí
