@@ -1,7 +1,7 @@
 <header id="header">
     {{ $homeURL := "/" | relLangURL }}
     {{ $blogURL := "/blog" | relLangURL }}
-    {{ $isSpanish := eq .Site.Language.Lang "es" }}
+    {{ $isSpanish := eq .Site.Language.Name "es" }}
     {{ $currentLanguageLabel := cond $isSpanish "ES" "EN" }}
     {{ $alternateLanguageLabel := cond $isSpanish "EN" "ES" }}
     {{ $alternateLanguageURL := cond $isSpanish "/" "/es/" }}
