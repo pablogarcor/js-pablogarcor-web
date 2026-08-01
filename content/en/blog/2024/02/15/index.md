@@ -2,6 +2,7 @@
 title: "WireGuard on OpenWrt via LuCI Interface"
 date: 2024-02-15
 slug: "wireguard-openwrt-via-luci"
+translationKey: "wireguard-openwrt-via-luci"
 tags: ["VPN", "WireGuard", "OpenWrt", "Networking"]
 description: "A comprehensive guide to setting up a WireGuard VPN on OpenWrt using the LuCI interface, including installation, key generation, network configuration, and client setup."
 ---

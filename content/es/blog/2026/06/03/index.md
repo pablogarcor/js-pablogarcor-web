@@ -2,6 +2,7 @@
 title: "Escribir por escribir"
 date: 2026-06-03
 slug: "escribir-por-escribir"
+translationKey: "escribir-por-escribir"
 author: "Pablo Garcia Ortega"
 tags: ["Escritura", "Vida Personal", "Reflexión"]
 description: "Una reflexión personal sobre lo poco que escribimos cuando no es por obligación"
@@ -14,4 +15,3 @@ No es raro el decir, tengo que leer mas, ir mas al cine o muchas otras cosas, pe
 Ahora mismo no busco contar nada, tampoco quiero sacar ninguna conclusión ni siquiera reflexionar, bueno, quizás reflexionar si, pero sin objetivo. Me gustaria escribir simplemente porque no lo suelo hacer fuera de mi rutina, porque quizás escribiendo consiga conocerme mas a mi mismo, una escritura sin objetivo claro mas hayá de la auto reflexión o darle salida a una idea sin mas pretensión que plasmarla de manera escrita. No se, quizás lo haga, escribir, sin objetivo, como cuando miro **_la buganvilla a traves de mi ventana_**.
 
 ![Mi buganvilla a través de mi ventana](escribir-por-escribir.webp)
-

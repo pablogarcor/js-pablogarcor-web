@@ -2,6 +2,7 @@
 title: "Boosting Your DigitalOcean Droplet's Memory: No Upgrade Needed When You're Short on RAM"
 date: 2024-02-29
 slug: "boost-digitalocean-droplet-memory-without-upgrading"
+translationKey: "boost-digitalocean-droplet-memory-without-upgrading"
 author: "Pablo García Ortega"
 tags: ["DigitalOcean", "Server Optimization", "Web Development", "Memory Management", "SWAP Memory", "Linux Server", "Tech Solutions"]
 description: "Learn how to enhance your DigitalOcean Droplet's memory without opting for a costly upgrade. This guide by Pablo García Ortega walks you through the steps to leverage SWAP memory, ensuring your projects run smoothly on limited RAM. Ideal for developers and tech enthusiasts looking for efficient server management techniques."

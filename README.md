@@ -135,6 +135,7 @@ Example post front matter:
 title: "Example Post"
 date: 2026-05-18
 slug: "example-post"
+translationKey: "example-post"
 author: "Pablo Garcia Ortega"
 tags: ["Hugo", "Web Development"]
 description: "Short description for search engines and previews."
@@ -147,6 +148,8 @@ The `slug` is important because `config.toml` publishes blog posts at:
 [permalinks]
   blog = "/:slug/"
 ```
+
+Every blog post must define a `translationKey`. Independent posts use different keys; true translations reuse exactly the same key across languages. Hugo uses `translationKey` to pair translated pages, while `slug` controls the public URL and should remain stable.
 
 ## Templates And Styling
 

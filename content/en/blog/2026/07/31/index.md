@@ -2,6 +2,7 @@
 title: "How I Fixed My LG OLED65CX5LB by Replacing the Main Board"
 date: 2026-07-31
 slug: "fix-lg-oled65cx5lb-main-board"
+translationKey: "fix-lg-oled65cx5lb-main-board"
 author: "Pablo García Ortega"
 tags: ["LG", "OLED", "TV Repair", "Electronics", "DIY"]
 description: "How I fixed recurring image corruption on my LG OLED65CX5LB by replacing its EBU66095002 main board after a thermal-paste fix lasted about a year."

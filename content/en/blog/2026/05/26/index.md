@@ -2,6 +2,7 @@
 title: "Building a Personal CV Page to Rank My Name"
 date: 2026-05-26
 slug: "building-personal-cv-page-to-rank-my-name"
+translationKey: "building-personal-cv-page-to-rank-my-name"
 author: "Pablo García Ortega"
 tags: ["SEO", "Personal Branding", "Personal Website", "SERPs", "Web Development"]
 description: "How I created a small personal CV page in English and Spanish to help Google connect my name, Pablo Garcia Ortega, with my own website."

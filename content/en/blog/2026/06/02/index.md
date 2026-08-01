@@ -2,6 +2,7 @@
 title: "A Common Library for Multi-Client Sites"
 date: 2026-06-02
 slug: "common-library-for-multi-client-sites"
+translationKey: "common-library-for-multi-client-sites"
 author: "Pablo García Ortega"
 tags: ["Web Development", "Architecture", "Frontend", "Maintainability", "Multi-Client"]
 description: "Why I prefer using a shared common library and independent client repositories instead of building one huge multi-client codebase."
