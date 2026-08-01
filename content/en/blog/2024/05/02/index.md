@@ -2,6 +2,7 @@
 title: "Redirecting an Apex Domain to www on Azure Static Web App"
 date: 2024-05-02
 slug: "redirect-apex-domain-to-www-azure-static-web-app"
+translationKey: "redirect-apex-domain-to-www-azure-static-web-app"
 tags: ["Azure", "DNS", "Web Development", "Namecheap"]
 description: "Learn how to redirect an apex domain to www using Azure Static Web App. This guide covers the entire process from initial setup to linking domains with third-party DNS providers and configuring default domains."
 ---

@@ -3,6 +3,7 @@ title: "How I Routed One OpenWrt Wi-Fi Network Through CyberGhost"
 date: 2026-07-25
 lastmod: 2026-07-30
 slug: "openwrt-cyberghost-vpn-wifi"
+translationKey: "openwrt-cyberghost-vpn-wifi"
 author: "Pablo García Ortega"
 tags: ["OpenWrt", "CyberGhost", "OpenVPN", "Networking", "PBR"]
 description: "How I configured a Xiaomi AX3600 running OpenWrt so one isolated Wi-Fi SSID uses CyberGhost OpenVPN with PBR and a kill switch, while the rest of my network keeps using the normal ISP connection."

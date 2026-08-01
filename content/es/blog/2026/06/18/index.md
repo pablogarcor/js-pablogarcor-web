@@ -3,6 +3,7 @@ title: "Hazme CASIO"
 date: 2026-06-18
 lastmod: 2026-06-19
 slug: "hazme-casio"
+translationKey: "hazme-casio"
 aliases:
   - /es/hacedme-casio/
 author: "Pablo Garcia Ortega"

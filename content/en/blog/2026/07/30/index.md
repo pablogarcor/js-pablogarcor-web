@@ -2,6 +2,7 @@
 title: "How I Fixed the Broken Straps on an Electric Roller Shutter"
 date: 2026-07-30
 slug: "fix-broken-electric-roller-shutter-straps"
+translationKey: "fix-broken-electric-roller-shutter-straps"
 author: "Pablo García Ortega"
 tags: ["DIY", "Home Repair", "Roller Shutters", "Maintenance"]
 description: "How I replaced the broken suspension straps on an electric roller shutter with screwless hangers, five euros in parts and a little manual work."

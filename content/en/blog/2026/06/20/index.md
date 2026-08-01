@@ -2,6 +2,7 @@
 title: "Fixing the Start PXE over IPv4 Boot Message"
 date: 2026-06-20
 slug: "fix-start-pxe-over-ipv4-boot-message"
+translationKey: "fix-start-pxe-over-ipv4-boot-message"
 author: "Pablo García Ortega"
 tags: ["Ubuntu", "Lenovo", "BIOS", "Boot", "PXE"]
 description: "How I stopped the Start PXE over IPv4 boot message on my Lenovo laptop by disabling PXE Boot to LAN in the BIOS."

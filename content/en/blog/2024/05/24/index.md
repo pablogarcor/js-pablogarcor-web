@@ -2,6 +2,7 @@
 title: "Add iCloud+ Custom Email Account to Thunderbird"
 date: 2024-05-24
 slug: "icloud-custom-email-thunderbird"
+translationKey: "icloud-custom-email-thunderbird"
 tags: ["iCloud+", "Thunderbird", "Email Setup", "Linux"]
 description: "Learn how to add a custom iCloud+ email account to Thunderbird on Linux. This guide provides step-by-step instructions for configuring your email client with an Apple app-specific password."
 ---

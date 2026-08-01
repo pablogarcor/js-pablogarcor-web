@@ -2,6 +2,7 @@
 title: "Migrating My Website to Azure"
 date: 2024-04-22
 slug: "migrating-website-azure"
+translationKey: "migrating-website-azure"
 author: "Pablo García Ortega"
 tags: ["Azure", "Cloud Migration", "Web Hosting", "Static Websites", "GitHub Integration"]
 description: "Discover the benefits and process of migrating a personal website to Azure. This article covers why Azure is a great choice for hosting, the streamlined architecture setup using Hugo, and the advantages of automated deployments through GitHub integration."

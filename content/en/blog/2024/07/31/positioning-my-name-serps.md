@@ -2,6 +2,7 @@
 title: "Positioning my name in the SERPs"
 date: 2024-07-31
 slug: "positioning-my-name-serps"
+translationKey: "positioning-my-name-serps"
 author: "Pablo García Ortega"
 tags: ["SEO", "Personal Branding", "Digital Marketing", "SERPs", "Website Optimization"]
 description: "Improve my online presence by optimizing his website to rank for my name in search engine results pages (SERPs)."
