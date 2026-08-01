@@ -2,6 +2,7 @@
 title: "Passing a Math Heavy Physics Subject With ChatGPT"
 date: 2026-06-27
 slug: "passing-math-heavy-physics-subject-with-chatgpt"
+translationKey: "passing-math-heavy-physics-subject-with-chatgpt"
 author: "Pablo García Ortega"
 tags: ["Artificial Intelligence", "ChatGPT", "Physics", "University", "Studying"]
 description: "How I used ChatGPT to prepare a math heavy university physics subject and passed it with a 7 out of 10."

@@ -2,6 +2,7 @@
 title: "Writing Like Humans in AI Times"
 date: 2026-05-18
 slug: "writing-like-humans-in-ai-times"
+translationKey: "writing-like-humans-in-ai-times"
 author: "Pablo García Ortega"
 tags: ["Writing", "Artificial Intelligence", "Personal Reflections", "Creativity", "Communication"]
 description: "A personal reflection about why writing with a human voice matters more than ever in these AI times, even if the result is not perfect English."
