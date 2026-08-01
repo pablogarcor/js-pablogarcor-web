@@ -9,7 +9,7 @@ The site is intentionally small: Markdown content, custom Hugo layouts, static C
 - Hugo static site generator
 - Custom Hugo templates in `layouts/`
 - Static CSS in `static/css/`
-- Docker-based local build scripts using `hugomods/hugo:0.122.0`
+- Docker-based local build scripts using `hugomods/hugo:0.164.0`
 - Azure Static Web Apps deployment through GitHub Actions
 
 ## Project Structure
@@ -18,17 +18,23 @@ The site is intentionally small: Markdown content, custom Hugo layouts, static C
 .
 |-- config.toml
 |-- content/
-|   |-- _index.md
-|   |-- about.md
-|   |-- blog.md
-|   |-- presentation.md
-|   `-- blog/
-|       `-- yyyy/mm/dd/
+|   |-- en/
+|   |   |-- about.md
+|   |   |-- presentation.md
+|   |   `-- blog/
+|   |       |-- _index.md
+|   |       `-- yyyy/mm/dd/
+|   `-- es/
+|       |-- about.md
+|       |-- presentation.md
+|       `-- blog/
+|           |-- _index.md
+|           `-- yyyy/mm/dd/
 |-- layouts/
-|   |-- index.html
+|   |-- home.html
+|   |-- blog.html
 |   |-- blog/single.html
-|   |-- page/blog.html
-|   `-- partials/
+|   `-- _partials/
 |-- static/
 |   |-- css/
 |   `-- favicon/
@@ -45,7 +51,7 @@ The included scripts require Docker.
 They run Hugo through this image:
 
 ```text
-hugomods/hugo:0.122.0
+hugomods/hugo:0.164.0
 ```
 
 If you prefer not to use Docker, install a compatible Hugo version locally and run the equivalent Hugo commands.
@@ -76,7 +82,7 @@ Open:
 http://localhost:1313
 ```
 
-The script binds Hugo to `0.0.0.0` inside Docker and maps port `1313`.
+The script renders the site in memory, binds Hugo to `0.0.0.0` inside Docker, and maps port `1313`.
 
 ## Build
 
@@ -103,29 +109,30 @@ Generated build output should not be committed.
 
 ## Content
 
-General site pages live in `content/`:
+General site pages live in each language directory under `content/`:
 
-- `content/presentation.md`: homepage introduction.
-- `content/about.md`: homepage about section.
-- `content/blog.md`: blog listing page using the custom `blog` layout.
+- `content/en/presentation.md`: English homepage introduction.
+- `content/en/about.md`: English homepage about section.
+- `content/en/blog/_index.md`: English blog section using the custom `blog` layout.
+- Spanish equivalents live under `content/es/`.
 
-Blog posts live under `content/blog/` using a date-based path:
+Blog posts live under `content/<language>/blog/` using a date-based path:
 
 ```text
-content/blog/yyyy/mm/dd/
+content/en/blog/yyyy/mm/dd/
 ```
 
 For posts without images, use a Markdown file:
 
 ```text
-content/blog/2026/05/18/example-post.md
+content/en/blog/2026/05/18/example-post.md
 ```
 
 For posts with images, use a Hugo leaf bundle:
 
 ```text
-content/blog/2026/05/18/index.md
-content/blog/2026/05/18/example-image.webp
+content/en/blog/2026/05/18/index.md
+content/en/blog/2026/05/18/example-image.webp
 ```
 
 Example post front matter:
@@ -155,13 +162,13 @@ Every blog post must define a `translationKey`. Independent posts use different 
 
 The site uses custom templates instead of a theme:
 
-- `layouts/index.html`: homepage.
-- `layouts/page/blog.html`: blog archive grouped by year.
+- `layouts/home.html`: homepage.
+- `layouts/blog.html`: blog archive grouped by year.
 - `layouts/blog/single.html`: single post page.
-- `layouts/partials/header.html`: main navigation.
-- `layouts/partials/latest-posts.html`: five latest posts on the homepage.
-- `layouts/partials/contact.html`: contact block.
-- `layouts/partials/footer.html`: footer and Hugo logo.
+- `layouts/_partials/header.html`: main navigation.
+- `layouts/_partials/latest-posts.html`: five latest posts on the homepage.
+- `layouts/_partials/contact.html`: contact block.
+- `layouts/_partials/footer.html`: footer and Hugo logo.
 
 CSS is served directly from `static/css/`:
 
@@ -183,9 +190,10 @@ The workflow runs on:
 Current Azure build configuration:
 
 ```yaml
-app_location: "/"
+app_location: "public"
 api_location: ""
-output_location: "public"
+output_location: ""
+skip_app_build: true
 ```
 
 ## Notes
