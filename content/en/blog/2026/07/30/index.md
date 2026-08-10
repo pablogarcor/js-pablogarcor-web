@@ -1,5 +1,5 @@
 ---
-title: "How I Fixed the Broken Straps on an Electric Roller Shutter"
+title: "A Five-Euro Repair for My Jammed Electric Roller Shutter"
 date: 2026-07-30
 slug: "fix-broken-electric-roller-shutter-straps"
 translationKey: "fix-broken-electric-roller-shutter-straps"

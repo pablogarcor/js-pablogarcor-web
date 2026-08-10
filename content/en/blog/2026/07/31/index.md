@@ -1,5 +1,5 @@
 ---
-title: "How I Fixed My LG OLED65CX5LB by Replacing the Main Board"
+title: "When Thermal Paste Was Not Enough for My LG OLED65CX5LB"
 date: 2026-07-31
 slug: "fix-lg-oled65cx5lb-main-board"
 translationKey: "fix-lg-oled65cx5lb-main-board"

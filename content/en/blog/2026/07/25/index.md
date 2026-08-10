@@ -1,5 +1,5 @@
 ---
-title: "How I Routed One OpenWrt Wi-Fi Network Through CyberGhost"
+title: "One OpenWrt Wi-Fi Through CyberGhost, the Rest Through My ISP"
 date: 2026-07-25
 lastmod: 2026-07-30
 slug: "openwrt-cyberghost-vpn-wifi"
