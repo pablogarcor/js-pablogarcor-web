@@ -1,6 +1,6 @@
 #!/bin/bash
 
-docker run --rm -it \
+docker run --rm \
   -v $(dirname "$0")/..:/src \
   --user 1000:1000 \
   hugomods/hugo:0.164.0 \
