@@ -18,19 +18,24 @@ Hugo site). Every command below has been run from the repo root.
 ## Install
 
 There are no project dependencies: no `package.json`, no `go.mod`, no theme.
-The only requirement is Hugo **0.122.0**, the same version as the Docker image in
+The only requirement is Hugo **0.165.0**, the same version as the Docker image in
 `scripts/` and in CI. The standard (non-extended) edition is enough: the site
 uses no Sass/SCSS and no image processing.
 
+Install it per version under `/srv/repos/.tools/` and call it by its full path:
+
 ```sh
 cd "$(mktemp -d)"
-curl -fsSLO https://github.com/gohugoio/hugo/releases/download/v0.122.0/hugo_0.122.0_linux-amd64.tar.gz
-curl -fsSLO https://github.com/gohugoio/hugo/releases/download/v0.122.0/hugo_0.122.0_checksums.txt
-grep ' hugo_0.122.0_linux-amd64.tar.gz$' hugo_0.122.0_checksums.txt | sha256sum -c -
-tar -xzf hugo_0.122.0_linux-amd64.tar.gz hugo
-install -m 755 hugo ~/.local/bin/hugo
-hugo version   # hugo v0.122.0-b9a03bd5... linux/amd64
+curl -fsSLO https://github.com/gohugoio/hugo/releases/download/v0.165.0/hugo_0.165.0_linux-amd64.tar.gz
+curl -fsSLO https://github.com/gohugoio/hugo/releases/download/v0.165.0/hugo_0.165.0_checksums.txt
+grep ' hugo_0.165.0_linux-amd64.tar.gz$' hugo_0.165.0_checksums.txt | sha256sum -c -
+tar -xzf hugo_0.165.0_linux-amd64.tar.gz hugo
+mkdir -p /srv/repos/.tools/hugo-0.165.0
+install -m 755 hugo /srv/repos/.tools/hugo-0.165.0/hugo
+/srv/repos/.tools/hugo-0.165.0/hugo version   # hugo v0.165.0-76a5e188... linux/amd64
 ```
+
+The commands below write `hugo` for short; use the full path above.
 
 ## Development
 
@@ -54,11 +59,11 @@ hugo --minify --gc --enableGitInfo --noBuildLock
 - Output goes to `public/` (git-ignored). Exit code 0 means the build is good.
 - `--enableGitInfo` takes each post's last-modified date from git, so run it
   inside a git checkout.
-- Three `WARN found no layout file for "html" for kind "section" / "taxonomy" /
-  "term"` lines are expected: the site has no templates for those page kinds.
-  Any `ERROR` line is a failure.
-- `scripts/build-web.sh` uses `docker run -it` and fails without a terminal
-  (agents, CI). Do not use it; run the command above instead.
+- Two `WARN found no layout file for "html" for kind "taxonomy" / "term"` lines
+  are expected: the site has no templates for those page kinds. Any `ERROR`
+  line, or any deprecation warning, is a failure.
+- `scripts/build-web.sh` runs the same build inside Docker. Agents do not use
+  it; run the command above instead.
 
 ## Tests
 
