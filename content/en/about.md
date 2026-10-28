@@ -1,6 +1,6 @@
 +++
 title = "About me"
-[_build]
+[build]
 list = "never"
 render = "never"
 +++
