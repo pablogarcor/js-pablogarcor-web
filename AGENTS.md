@@ -59,9 +59,10 @@ hugo --minify --gc --enableGitInfo --noBuildLock
 - Output goes to `public/` (git-ignored). Exit code 0 means the build is good.
 - `--enableGitInfo` takes each post's last-modified date from git, so run it
   inside a git checkout.
-- Two `WARN found no layout file for "html" for kind "taxonomy" / "term"` lines
-  are expected: the site has no templates for those page kinds. Any `ERROR`
-  line, or any deprecation warning, is a failure.
+- The build prints no `WARN` and no `ERROR`. Any `ERROR` line, or any
+  deprecation warning, is a failure.
+- Tag and category pages are disabled (`disableKinds` in `config.toml`): tags
+  are shown as plain text on each post and have no page or sitemap entry.
 - `scripts/build-web.sh` runs the same build inside Docker. Agents do not use
   it; run the command above instead.
 
