@@ -5,6 +5,7 @@
     {{ $currentLanguageLabel := cond $isSpanish "ES" "EN" }}
     {{ $alternateLanguageLabel := cond $isSpanish "EN" "ES" }}
     {{ $alternateLanguageURL := cond $isSpanish "/" "/es/" }}
+    {{ $alternateLanguageCode := cond $isSpanish "en" "es" }}
     {{ $isHome := .IsHome }}
     {{ $isBlog := or (eq .Section "blog") (eq .Layout "blog") }}
     {{ with .Translations }}
@@ -35,17 +36,17 @@
         </nav>
     </div>
     <div class="header-actions">
-        <div class="language-switcher" aria-label="{{ i18n "language_switcher" }}">
+        <nav class="language-switcher" aria-label="{{ i18n "language_switcher" }}">
             {{ if $isSpanish }}
-            <a href="{{ $alternateLanguageURL }}">{{ $alternateLanguageLabel }}</a>
+            <a href="{{ $alternateLanguageURL }}" hreflang="{{ $alternateLanguageCode }}" lang="{{ $alternateLanguageCode }}">{{ $alternateLanguageLabel }}</a>
             <span class="language-switcher__separator" aria-hidden="true">|</span>
             <span aria-current="true">{{ $currentLanguageLabel }}</span>
             {{ else }}
             <span aria-current="true">{{ $currentLanguageLabel }}</span>
             <span class="language-switcher__separator" aria-hidden="true">|</span>
-            <a href="{{ $alternateLanguageURL }}">{{ $alternateLanguageLabel }}</a>
+            <a href="{{ $alternateLanguageURL }}" hreflang="{{ $alternateLanguageCode }}" lang="{{ $alternateLanguageCode }}">{{ $alternateLanguageLabel }}</a>
             {{ end }}
-        </div>
+        </nav>
         <div class="theme-toggle-container">
             <button
                     class="theme-toggle"

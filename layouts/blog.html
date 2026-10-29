@@ -7,11 +7,13 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/blog.css">
+    <link rel="stylesheet" href="/css/contact.css">
     <title>{{ .Title }}</title>
   </head>
   <body class="blog-archive-page">
     {{ partial "header.html" . }}
     <main class="container blog-archive">
+      <h1>{{ i18n "nav_blog" }}</h1>
       {{ $posts := where .Site.RegularPages "Section" "blog" }}
       {{ if $posts }}
       {{ range $posts.GroupByDate "2006" }}
@@ -33,5 +35,6 @@
       <p>{{ i18n "no_posts" }}</p>
       {{ end }}
     </main>
+    {{ partial "footer.html" . }}
   </body>
 </html>
