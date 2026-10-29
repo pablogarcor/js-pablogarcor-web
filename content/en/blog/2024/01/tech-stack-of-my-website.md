@@ -9,7 +9,7 @@ description: "Discover the streamlined and efficient tech stack behind pablogarc
 ---
 
 
-Today, I want to talk about all the technologies I'm using on [pablogarcor.com](https://pablogarcor.com) and why I chose them over others. Sometimes, we overkill by using the most complex tools and resources simply because they're mainstream. That's not necessarily a bad thing; I've used a lot of fancy CMSs myself. But this time, I wanted to keep things simple, which is why I chose the Static Site Generator (SSG) path. But let me start from the beginning.
+Today, I want to talk about all the technologies I'm using on [pablogarcor.com](https://www.pablogarcor.com) and why I chose them over others. Sometimes, we overkill by using the most complex tools and resources simply because they're mainstream. That's not necessarily a bad thing; I've used a lot of fancy CMSs myself. But this time, I wanted to keep things simple, which is why I chose the Static Site Generator (SSG) path. But let me start from the beginning.
 
 ## Docker at the Very Bottom
 
