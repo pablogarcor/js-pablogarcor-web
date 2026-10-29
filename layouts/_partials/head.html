@@ -1,0 +1,46 @@
+{{- $page := .page -}}
+{{- $title := cond $page.IsHome (printf "%s · %s" site.Title $page.Title) (printf "%s · %s" $page.Title site.Title) -}}
+{{- $description := $page.Description | default (site.Home.Description) -}}
+{{- $isPost := and $page.IsPage (eq $page.Section "blog") -}}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{{- range .css }}
+<link rel="stylesheet" href="/css/{{ . }}.css">
+{{- end }}
+<title>{{ $title }}</title>
+<meta name="description" content="{{ $description }}">
+<link rel="canonical" href="{{ $page.Permalink }}">
+{{- if $page.IsTranslated }}
+{{- range $page.AllTranslations }}
+<link rel="alternate" hreflang="{{ .Language.Name }}" href="{{ .Permalink }}">
+{{- if eq .Language.Name hugo.Sites.Default.Language.Name }}
+<link rel="alternate" hreflang="x-default" href="{{ .Permalink }}">
+{{- end }}
+{{- end }}
+{{- end }}
+<meta property="og:site_name" content="{{ site.Title }}">
+<meta property="og:title" content="{{ cond $page.IsHome $title $page.Title }}">
+<meta property="og:description" content="{{ $description }}">
+<meta property="og:url" content="{{ $page.Permalink }}">
+<meta property="og:type" content="{{ cond $isPost "article" "website" }}">
+<meta property="og:locale" content="{{ replace site.Language.Locale "-" "_" }}">
+{{- range $page.Translations }}
+<meta property="og:locale:alternate" content="{{ replace .Language.Locale "-" "_" }}">
+{{- end }}
+{{- if $isPost }}
+<meta property="article:published_time" content="{{ $page.Date.UTC.Format "2006-01-02T15:04:05Z" }}">
+<meta property="article:modified_time" content="{{ $page.Lastmod.UTC.Format "2006-01-02T15:04:05Z" }}">
+{{- range $page.Params.tags }}
+<meta property="article:tag" content="{{ . }}">
+{{- end }}
+{{- end }}
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{{ cond $page.IsHome $title $page.Title }}">
+<meta name="twitter:description" content="{{ $description }}">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+<link rel="manifest" href="/favicon/site.webmanifest">
+<link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
