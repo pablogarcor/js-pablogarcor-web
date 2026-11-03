@@ -6,8 +6,9 @@
             <div class="site-footer__built-with">
                 <span>{{ i18n "built_with_hugo" }}</span>
                 {{ with resources.Get "logos/hugo-logo.svg" }}
+                {{ $viewBox := index (findRESubmatch `viewBox="[\d.]+ [\d.]+ ([\d.]+) ([\d.]+)"` .Content 1) 0 }}
                 <a href="https://gohugo.io/" target="_blank" rel="noreferrer">
-                    <img src="{{ .RelPermalink }}" alt="HUGO Logo">
+                    <img src="{{ .RelPermalink }}" alt="HUGO Logo" width="{{ index $viewBox 1 }}" height="{{ index $viewBox 2 }}" loading="lazy" decoding="async">
                 </a>
                 {{ end }}
             </div>
