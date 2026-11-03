@@ -1,7 +1,8 @@
 #!/bin/bash
 
 docker run --rm \
-  -v $(dirname "$0")/..:/src \
+  -v $(dirname "$0")/..:/project \
   --user 1000:1000 \
-  hugomods/hugo:0.165.0 \
-  sh -c 'hugo --minify --gc --enableGitInfo --noBuildLock  && mkdir -p build && mv public build/public && mv resources build/resources'
+  --entrypoint sh \
+  ghcr.io/gohugoio/hugo:v0.169.0 \
+  -c 'hugo --minify --gc --enableGitInfo --noBuildLock  && mkdir -p build && mv public build/public && mv resources build/resources'
