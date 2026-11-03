@@ -1,7 +1,11 @@
 baseURL = 'https://www.pablogarcor.com/'
-title = 'pablogarcor Site'
+title = 'Pablo García Ortega'
 defaultContentLanguage = 'en'
 defaultContentLanguageInSubdir = false
+
+# No tag or category pages: there are no templates for them, and Hugo would
+# list them in the sitemap anyway. Tags are still shown as text on each post.
+disableKinds = ['taxonomy', 'term']
 
 [languages]
   [languages.en]
