@@ -1,0 +1,20 @@
+{{- /*
+  Markdown images. When the image is a page resource (leaf bundle) or lives in
+  assets/, add its real width and height so the browser reserves its space.
+  Every image except the first one of the page is loaded lazily.
+*/ -}}
+{{- $u := urls.Parse .Destination -}}
+{{- $src := $u.String -}}
+{{- $img := "" -}}
+{{- if not $u.IsAbs -}}
+  {{- $path := strings.TrimPrefix "./" $u.Path -}}
+  {{- with or (.PageInner.Resources.Get $path) (resources.Get $path) -}}
+    {{- $img = . -}}
+    {{- $src = .RelPermalink -}}
+  {{- end -}}
+{{- end -}}
+<img src="{{ $src }}" alt="{{ .PlainText }}"
+  {{- with .Title }} title="{{ . }}"{{ end }}
+  {{- with $img }}{{ if and (eq .ResourceType "image") (ne .MediaType.SubType "svg") }} width="{{ .Width }}" height="{{ .Height }}"{{ end }}{{ end }}
+  {{- if gt .Ordinal 0 }} loading="lazy" decoding="async"{{ end }}>
+{{- /* chomp trailing newline */ -}}
