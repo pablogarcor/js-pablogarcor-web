@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.Language.Locale }}">
   <head>
-    {{ partial "head.html" (dict "page" . "css" (slice "style" "header" "blog")) }}
+    {{ partial "head.html" (dict "page" . "css" (slice "style" "header" "blog" "contact")) }}
   </head>
   <body class="blog-archive-page">
     {{ partial "header.html" . }}
     <main class="container blog-archive">
+      <h1>{{ .Title }}</h1>
       {{ $posts := where .Site.RegularPages "Section" "blog" }}
       {{ if $posts }}
       {{ range $posts.GroupByDate "2006" }}
@@ -27,5 +28,6 @@
       <p>{{ i18n "no_posts" }}</p>
       {{ end }}
     </main>
+    {{ partial "footer.html" . }}
   </body>
 </html>
