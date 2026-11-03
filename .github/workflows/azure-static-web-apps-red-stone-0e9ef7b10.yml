@@ -22,11 +22,12 @@ jobs:
       - name: Build Hugo site
         run: |
           docker run --rm \
-            -v "${{ github.workspace }}:/src" \
-            -w /src \
+            -v "${{ github.workspace }}:/project" \
+            -w /project \
             --user "$(id -u):$(id -g)" \
-            hugomods/hugo:0.165.0 \
-            hugo --minify --gc --enableGitInfo --noBuildLock
+            -e HUGO_CACHEDIR=/tmp/hugo_cache \
+            ghcr.io/gohugoio/hugo:v0.169.0 \
+            --minify --gc --enableGitInfo --noBuildLock
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
