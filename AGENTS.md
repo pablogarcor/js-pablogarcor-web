@@ -18,21 +18,22 @@ Hugo site). Every command below has been run from the repo root.
 ## Install
 
 There are no project dependencies: no `package.json`, no `go.mod`, no theme.
-The only requirement is Hugo **0.165.0**, the same version as the Docker image in
-`scripts/` and in CI. The standard (non-extended) edition is enough: the site
-uses no Sass/SCSS and no image processing.
+The only requirement is Hugo **0.169.0**, the same version as the official Docker
+image (`ghcr.io/gohugoio/hugo:v0.169.0`) in `scripts/` and in CI. The standard
+(non-extended) edition is enough: the site uses no Sass/SCSS and no image
+processing.
 
 Install it per version under `/srv/repos/.tools/` and call it by its full path:
 
 ```sh
 cd "$(mktemp -d)"
-curl -fsSLO https://github.com/gohugoio/hugo/releases/download/v0.165.0/hugo_0.165.0_linux-amd64.tar.gz
-curl -fsSLO https://github.com/gohugoio/hugo/releases/download/v0.165.0/hugo_0.165.0_checksums.txt
-grep ' hugo_0.165.0_linux-amd64.tar.gz$' hugo_0.165.0_checksums.txt | sha256sum -c -
-tar -xzf hugo_0.165.0_linux-amd64.tar.gz hugo
-mkdir -p /srv/repos/.tools/hugo-0.165.0
-install -m 755 hugo /srv/repos/.tools/hugo-0.165.0/hugo
-/srv/repos/.tools/hugo-0.165.0/hugo version   # hugo v0.165.0-76a5e188... linux/amd64
+curl -fsSLO https://github.com/gohugoio/hugo/releases/download/v0.169.0/hugo_0.169.0_linux-amd64.tar.gz
+curl -fsSLO https://github.com/gohugoio/hugo/releases/download/v0.169.0/hugo_0.169.0_checksums.txt
+grep ' hugo_0.169.0_linux-amd64.tar.gz$' hugo_0.169.0_checksums.txt | sha256sum -c -
+tar -xzf hugo_0.169.0_linux-amd64.tar.gz hugo
+mkdir -p /srv/repos/.tools/hugo-0.169.0
+install -m 755 hugo /srv/repos/.tools/hugo-0.169.0/hugo
+/srv/repos/.tools/hugo-0.169.0/hugo version   # hugo v0.169.0-1da10fc4... linux/amd64
 ```
 
 The commands below write `hugo` for short; use the full path above.

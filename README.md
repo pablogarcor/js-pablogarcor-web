@@ -9,7 +9,7 @@ The site is intentionally small: Markdown content, custom Hugo layouts, static C
 - Hugo static site generator
 - Custom Hugo templates in `layouts/`
 - Static CSS in `static/css/`
-- Docker-based local build scripts using `hugomods/hugo:0.164.0`
+- Docker-based local build scripts using `ghcr.io/gohugoio/hugo:v0.169.0`
 - Azure Static Web Apps deployment through GitHub Actions
 
 ## Project Structure
@@ -51,7 +51,7 @@ The included scripts require Docker.
 They run Hugo through this image:
 
 ```text
-hugomods/hugo:0.164.0
+ghcr.io/gohugoio/hugo:v0.169.0
 ```
 
 If you prefer not to use Docker, install a compatible Hugo version locally and run the equivalent Hugo commands.
