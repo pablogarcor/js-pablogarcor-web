@@ -1,5 +1,7 @@
 {{- $page := .page -}}
-{{- $title := cond $page.IsHome (printf "%s · %s" site.Title $page.Title) (printf "%s · %s" $page.Title site.Title) -}}
+{{- $is404 := eq $page.Kind "404" -}}
+{{- $pageTitle := cond $is404 (i18n "not_found_title") $page.Title -}}
+{{- $title := cond $page.IsHome (printf "%s · %s" site.Title $pageTitle) (printf "%s · %s" $pageTitle site.Title) -}}
 {{- $description := $page.Description | default (site.Home.Description) -}}
 {{- $isPost := and $page.IsPage (eq $page.Section "blog") -}}
 <meta charset="UTF-8">
@@ -9,8 +11,12 @@
 {{- end }}
 <title>{{ $title }}</title>
 <meta name="description" content="{{ $description }}">
+{{- if $is404 }}
+<meta name="robots" content="noindex">
+{{- else }}
 <link rel="canonical" href="{{ $page.Permalink }}">
-{{- if $page.IsTranslated }}
+{{- end }}
+{{- if and $page.IsTranslated (not $is404) }}
 {{- range $page.AllTranslations }}
 <link rel="alternate" hreflang="{{ .Language.Name }}" href="{{ .Permalink }}">
 {{- if eq .Language.Name hugo.Sites.Default.Language.Name }}
@@ -19,7 +25,7 @@
 {{- end }}
 {{- end }}
 <meta property="og:site_name" content="{{ site.Title }}">
-<meta property="og:title" content="{{ cond $page.IsHome $title $page.Title }}">
+<meta property="og:title" content="{{ cond $page.IsHome $title $pageTitle }}">
 <meta property="og:description" content="{{ $description }}">
 <meta property="og:url" content="{{ $page.Permalink }}">
 <meta property="og:type" content="{{ cond $isPost "article" "website" }}">
@@ -35,7 +41,7 @@
 {{- end }}
 {{- end }}
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="{{ cond $page.IsHome $title $page.Title }}">
+<meta name="twitter:title" content="{{ cond $page.IsHome $title $pageTitle }}">
 <meta name="twitter:description" content="{{ $description }}">
 <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">

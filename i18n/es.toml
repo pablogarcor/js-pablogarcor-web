@@ -57,3 +57,9 @@ other = "Oscuro"
 
 [theme_light]
 other = "Claro"
+
+[not_found_title]
+other = "Página no encontrada"
+
+[not_found_text]
+other = "La página que buscas no existe o ha cambiado de sitio. Puedes ver todos los posts o volver al inicio."

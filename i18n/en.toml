@@ -57,3 +57,9 @@ other = "Dark"
 
 [theme_light]
 other = "Light"
+
+[not_found_title]
+other = "Page not found"
+
+[not_found_text]
+other = "The page you are looking for does not exist or has moved. You can browse all the posts or go back to the homepage."
