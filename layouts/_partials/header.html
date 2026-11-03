@@ -8,7 +8,7 @@
     {{ $alternateLanguageCode := cond $isSpanish "en" "es" }}
     {{ $isHome := .IsHome }}
     {{ $isBlog := or (eq .Section "blog") (eq .Layout "blog") }}
-    {{ with .Translations }}
+    {{ with and (ne .Kind "404") .Translations }}
     {{ with index . 0 }}
     {{ $alternateLanguageURL = .RelPermalink }}
     {{ end }}

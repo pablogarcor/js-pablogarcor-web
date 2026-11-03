@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Locale }}">
+  <head>
+    {{- if eq .Site.Language.Name hugo.Sites.Default.Language.Name }}
+    {{- /*
+      Azure Static Web Apps only allows one 404 override for the whole site
+      (staticwebapp.config.json), and it points here. A missing URL under /es/
+      swaps this page for /es/404.html in place, so the address bar and the
+      404 status stay as they are.
+    */}}
+    {{- with index (where hugo.Sites "Language.Name" "es") 0 }}
+    <script>
+      (function () {
+        if (location.pathname.indexOf("{{ .Home.RelPermalink }}") !== 0) {
+          return;
+        }
+        var root = document.documentElement;
+        root.style.visibility = "hidden";
+        fetch("{{ .Home.RelPermalink }}404.html")
+          .then(function (response) {
+            if (!response.ok) {
+              throw new Error(response.status);
+            }
+            return response.text();
+          })
+          .then(function (html) {
+            document.open();
+            document.write(html);
+            document.close();
+          })
+          .catch(function () {
+            root.style.visibility = "";
+          });
+      }());
+    </script>
+    {{- end }}
+    {{- end }}
+    {{ partial "head.html" (dict "page" . "css" (slice "style" "header" "contact")) }}
+  </head>
+  <body class="not-found-page">
+    {{ partial "header.html" . }}
+    {{ $homeURL := "/" | relLangURL }}
+    {{ $blogURL := "/blog" | relLangURL }}
+    <main class="container">
+      <section class="home-intro">
+        <h1>{{ i18n "not_found_title" }}</h1>
+        <p>{{ i18n "not_found_text" }}</p>
+        <div class="home-actions">
+          <a class="home-button home-button--primary" href="{{ $blogURL }}">{{ i18n "read_my_notes" }}</a>
+          <a class="home-button" href="{{ $homeURL }}">{{ i18n "back_to_homepage" }}</a>
+        </div>
+      </section>
+    </main>
+    {{ partial "footer.html" . }}
+  </body>
+</html>
