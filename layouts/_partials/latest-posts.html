@@ -8,7 +8,7 @@
         {{ $posts := first 5 (where .Site.RegularPages "Section" "blog") }}
         {{ if $posts }}
         {{ range $posts }}
-        <a class="post" href="{{ .Permalink }}">
+        <a class="post" href="{{ .RelPermalink }}">
             <h4>{{ .Title }}</h4>
             <time>{{ partial "post-date.html" . }}</time>
         </a>

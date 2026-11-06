@@ -15,7 +15,7 @@
       <ul>
         {{ range .Pages }}
         <li>
-          <a class="post__container" href="{{ .Permalink }}">
+          <a class="post__container" href="{{ .RelPermalink }}">
             <h3>{{ .Title }}</h3>
             <time datetime="{{ .Date.Format "2006-01-02" }}">{{ partial "post-date.html" . }}</time>
           </a>
