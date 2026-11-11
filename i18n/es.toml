@@ -63,6 +63,3 @@ other = "Página no encontrada"
 
 [not_found_text]
 other = "La página que buscas no existe o ha cambiado de sitio. Puedes ver todos los posts o volver al inicio."
-
-[cv_link]
-other = "CV: pablogarciaortega.com"

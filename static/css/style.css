@@ -411,17 +411,7 @@ table {
     font-size: 1.12rem;
     font-weight: 700;
     line-height: 1.25;
-}
-
-.site-footer__identity {
-    display: flex;
-    flex-direction: column;
-    gap: 0.35rem;
-    min-width: 0;
-}
-
-.site-footer__cv {
-    color: inherit;
+    text-decoration: none;
 }
 
 .site-footer__built-with {
