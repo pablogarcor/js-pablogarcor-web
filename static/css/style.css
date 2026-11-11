@@ -411,6 +411,7 @@ table {
     font-size: 1.12rem;
     font-weight: 700;
     line-height: 1.25;
+    text-decoration: none;
 }
 
 .site-footer__built-with {
