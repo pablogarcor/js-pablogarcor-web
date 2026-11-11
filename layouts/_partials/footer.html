@@ -2,7 +2,11 @@
     <div class="site-footer__inner">
         {{ partial "contact.html" . }}
         <div class="site-footer__meta">
-            <span class="site-footer__name">Pablo García Ortega</span>
+            {{ $cvURL := cond (eq .Site.Language.Name "es") "https://pablogarciaortega.com/es/" "https://pablogarciaortega.com/" }}
+            <div class="site-footer__identity">
+                <span class="site-footer__name">Pablo García Ortega</span>
+                <a class="site-footer__cv" href="{{ $cvURL }}" rel="me">{{ i18n "cv_link" }}</a>
+            </div>
             <div class="site-footer__built-with">
                 <span>{{ i18n "built_with_hugo" }}</span>
                 {{ with resources.Get "logos/hugo-logo.svg" }}

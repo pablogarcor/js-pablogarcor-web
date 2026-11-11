@@ -413,6 +413,17 @@ table {
     line-height: 1.25;
 }
 
+.site-footer__identity {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    min-width: 0;
+}
+
+.site-footer__cv {
+    color: inherit;
+}
+
 .site-footer__built-with {
     display: inline-flex;
     align-items: center;
