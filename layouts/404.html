@@ -35,7 +35,7 @@
     </script>
     {{- end }}
     {{- end }}
-    {{ partial "head.html" (dict "page" . "css" (slice "style" "header" "contact")) }}
+    {{ partial "head.html" (dict "page" . "css" (slice "style" "header" "contact" "not-found")) }}
   </head>
   <body class="not-found-page">
     {{ partial "header.html" . }}
@@ -43,6 +43,31 @@
     {{ $blogURL := "/blog" | relLangURL }}
     <main class="container">
       <section class="home-intro">
+        {{- $poster := "/media/vincent-404-poster.webp" | relURL }}
+        {{- /*
+          Decorative loop (Vincent Vega looking around). With
+          prefers-reduced-motion: reduce no <source> matches, the CSS hides the
+          video and shows the poster, and the script below stops it in browsers
+          that ignore media on <source>.
+        */}}
+        <div class="not-found-media" aria-hidden="true">
+          <video class="not-found-media__video" width="480" height="270" poster="{{ $poster }}" autoplay muted loop playsinline disablepictureinpicture disableremoteplayback>
+            <source src="{{ "/media/vincent-404.webm" | relURL }}" type="video/webm" media="(prefers-reduced-motion: no-preference)">
+            <source src="{{ "/media/vincent-404.mp4" | relURL }}" type="video/mp4" media="(prefers-reduced-motion: no-preference)">
+          </video>
+          <img class="not-found-media__poster" src="{{ $poster }}" width="480" height="270" alt="" decoding="async">
+        </div>
+        <script>
+          (function () {
+            if (!window.matchMedia || !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+              return;
+            }
+            var video = document.querySelector(".not-found-media__video");
+            video.removeAttribute("autoplay");
+            video.preload = "none";
+            video.pause();
+          }());
+        </script>
         <h1>{{ i18n "not_found_title" }}</h1>
         <p>{{ i18n "not_found_text" }}</p>
         <div class="home-actions">
