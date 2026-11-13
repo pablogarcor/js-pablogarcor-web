@@ -65,14 +65,14 @@ Taking an iPhone as an example, download the WireGuard app from the App Store. C
 3. Assign the device's IP address within the VPN's subnet, using a /32 mask.
 4. Finally click over "Add peer". That will open the peer configuration.
 
-![Configure iPhone device to use wireguard](wireguard-openwrt-7.webp)
+![Configure iPhone device to use wireguard](wireguard-openwrt-7.webp#narrow)
 
 Add the router as a peer in the app. 
 1. Using the router's public key (`wg.pub`). 
 2. The endpoint is the IP address and the designated port. If accessing the internet remotely is desired, use your external IP address and ensure CGNAT is not a concern.
 3. Allowed IPs should be 0.0.0.0 to route all the iPhone traffic over wireguard VPN.
 
-![Add peer to wireguard app on iOS](wireguard-openwrt-8.webp)
+![Add peer to wireguard app on iOS](wireguard-openwrt-8.webp#narrow)
 
 ## Finalizing the Router Configuration
 

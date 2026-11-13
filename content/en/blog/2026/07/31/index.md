@@ -88,7 +88,7 @@ There was only one small thing left.
 
 After replacing the main board, the TV showed an initial configuration menu that I could not remove with the normal remote. For that final step I needed a compatible LG service remote like the `MKJ39170828`.
 
-![An MKJ39170828 factory service remote like the one used to finish the initial setup](lg-service-remote-mkj39170828.webp)
+![An MKJ39170828 factory service remote like the one used to finish the initial setup](lg-service-remote-mkj39170828.webp#narrow)
 
 With that remote I could dismiss the initial configuration menu, and that was it. My TV was like new again.
 

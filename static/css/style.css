@@ -584,12 +584,21 @@ article.container li + li {
     text-decoration-thickness: 1px;
 }
 
+/* Body images: as wide as the text but never wider than the image itself
+   (--img-max-width, set by layouts/_markup/render-image.html), centred.
+   Images marked "#narrow" get a smaller --img-max-width. */
 .post-content img {
-    margin: 2.25rem 0;
+    max-width: min(100%, var(--img-max-width, 100%));
+    margin: 2.25rem auto;
     border: 1px solid var(--page-border-color);
     border-radius: var(--radius-md);
     background: var(--page-surface-muted-color);
     box-shadow: 0 1rem 2.5rem rgba(21, 28, 38, 0.08);
+}
+
+.post-content .post-image--narrow {
+    /* Fallback when the image size is unknown (remote images). */
+    --img-max-width: 28rem;
 }
 
 .post-content blockquote {
@@ -872,7 +881,7 @@ pre::-webkit-scrollbar-thumb {
     }
 
     .post-content img {
-        margin: 1.75rem 0;
+        margin: 1.75rem auto;
     }
 
     .post-footer {

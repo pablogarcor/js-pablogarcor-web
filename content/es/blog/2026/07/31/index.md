@@ -40,7 +40,7 @@ La inteligencia artificial no es una herramienta determinista. Por eso, más que
 
 Para eso hay herramientas: tests automáticos, lo que sea. Vale que una persona no revise manualmente todo lo que genera la IA; quizás no es necesario, pero sí es necesario que una persona sea responsable de la herramienta. Incluso en las producciones industriales más grandes siempre hay una persona supervisando, porque las máquinas se equivocan, los sensores arrojan resultados falsos y, en definitiva, siempre tiene que ser una persona quien apriete el botón y decida.
 
-![Una mano sujetando un dispositivo negro con controles rojos](esto-marcara-un-aintes-y-un-despues.webp)
+![Una mano sujetando un dispositivo negro con controles rojos](esto-marcara-un-aintes-y-un-despues.webp#narrow)
 
 ## La tendremos en todos lados
 

@@ -2,9 +2,25 @@
   Markdown images. When the image is a page resource (leaf bundle) or lives in
   assets/, add its real width and height so the browser reserves its space.
   Every image except the first one of the page is loaded lazily.
+
+  Display size (static/css/style.css, .post-content img):
+  - Default: the width of the text, but never wider than the image itself, so
+    small images are not upscaled. Use it for screenshots, diagrams and
+    landscape photos.
+  - "#narrow" at the end of the path, e.g. ![A remote](remote.webp#narrow):
+    centred and narrower, inside a 448 x 560 px box that keeps the aspect ratio
+    (448 px wide for square images, 420 px for 3:4, 327 px for a 0.58 remote).
+    Use it for portrait photos and small objects that only illustrate the text.
+  The fragment is removed from the src. On narrow screens both fit the text.
 */ -}}
+{{- $narrowMaxWidth := 448 -}}
+{{- $narrowMaxHeight := 560 -}}
 {{- $u := urls.Parse .Destination -}}
+{{- $narrow := eq $u.Fragment "narrow" -}}
 {{- $src := $u.String -}}
+{{- if $narrow -}}
+  {{- $src = strings.TrimSuffix "#narrow" $src -}}
+{{- end -}}
 {{- $img := "" -}}
 {{- if not $u.IsAbs -}}
   {{- $path := strings.TrimPrefix "./" $u.Path -}}
@@ -13,8 +29,25 @@
     {{- $src = .RelPermalink -}}
   {{- end -}}
 {{- end -}}
+{{- $width := 0 -}}
+{{- $height := 0 -}}
+{{- with $img -}}
+  {{- if and (eq .ResourceType "image") (ne .MediaType.SubType "svg") -}}
+    {{- $width = .Width -}}
+    {{- $height = .Height -}}
+  {{- end -}}
+{{- end -}}
+{{- $maxWidth := 0 -}}
+{{- if gt $width 0 -}}
+  {{- $maxWidth = $width -}}
+  {{- if $narrow -}}
+    {{- $maxWidth = math.Min $maxWidth $narrowMaxWidth (math.Floor (div (mul $narrowMaxHeight $width) (float $height))) | int -}}
+  {{- end -}}
+{{- end -}}
 <img src="{{ $src }}" alt="{{ .PlainText }}"
   {{- with .Title }} title="{{ . }}"{{ end }}
-  {{- with $img }}{{ if and (eq .ResourceType "image") (ne .MediaType.SubType "svg") }} width="{{ .Width }}" height="{{ .Height }}"{{ end }}{{ end }}
+  {{- if $narrow }} class="post-image--narrow"{{ end }}
+  {{- if gt $width 0 }} width="{{ $width }}" height="{{ $height }}"{{ end }}
+  {{- with $maxWidth }} style="--img-max-width: {{ . }}px"{{ end }}
   {{- if gt .Ordinal 0 }} loading="lazy" decoding="async"{{ end }}>
 {{- /* chomp trailing newline */ -}}
