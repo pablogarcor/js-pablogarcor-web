@@ -50,7 +50,7 @@ The important part was checking that the tabs matched the slots in my tube and t
 
 In my case, I inserted the metal tab of each hanger into one of the tube slots and opened it so it stayed fixed in place
 
-![Close-up of a screwless roller-shutter hanger clipped into a slot in the metal roller tube](screwless-roller-shutter-hanger.webp)
+![Close-up of a screwless roller-shutter hanger clipped into a slot in the metal roller tube](screwless-roller-shutter-hanger.webp#narrow)
 
 Now I could put the hangers in better positions, also on the motor side, without drilling anything.
 

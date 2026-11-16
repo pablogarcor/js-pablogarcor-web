@@ -8,7 +8,7 @@ tags: ["convivencia", "egoísmo", "reflexiones", "familia"]
 description: "Mi abuelo decía que el primer mandamiento debería ser «no estorbarás». Una reflexión sobre el egoísmo cotidiano y lo poco que cuesta ser considerado"
 ---
 
-![Estatua de un toro](no-estorbaras.webp)
+![Estatua de un toro](no-estorbaras.webp#narrow)
 
 **Mi abuelo** siempre decía una frase para cuando alguien, pudiendo elegir, decidía ponerse en medio a fastidiar a los demás por puro egoísmo. Hablo de cosas como estacionar el coche en una calle de único sentido para charlar con tu vecino mientras hay coches detrás, boicotear el quedar en el restaurante al que todo un grupo de amigos ha decidido ir o cualquier cosa que implique molestar sin mas razón que *"porque yo lo valgo"*. La frase es esta:
 

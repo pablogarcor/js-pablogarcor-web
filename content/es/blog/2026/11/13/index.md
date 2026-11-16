@@ -12,7 +12,7 @@ Perfección. Hay que se el mejor. O ganar o nada. Todos aspiramos a ser iniguala
 
 La existencia de esa perfección es irrelevante, el momento adecuado, lo ideal, todo eso es relativo y la única certeza es que hacer las cosas es lo que de verdad marcará la diferencia. Si dudas, hazlo, si no estás seguro, hazlo, siempre se puede mejorar pero si nunca empiezas todo se queda en una idea en tu mente que jamás alcanzará el punto de perfección que deseas. La inacción que genera esta búsqueda de la perfección no es mas que miedo, miedo al fracaso, a equivocarte, miedo a caer, una excusa autoinventada con la perfección como disfraz.
 
-![Bolígrafo con cara de unicornio](extasis-o-nada.webp)
+![Bolígrafo con cara de unicornio](extasis-o-nada.webp#narrow)
 
 ### Solo hazlo
 

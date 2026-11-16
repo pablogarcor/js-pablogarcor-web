@@ -30,4 +30,4 @@ Hasta que, de repente, salí del trance. Para que necesito tantas tonterías en 
 
 Solo necesité cargarme 2 apple watch para llegar a la conclusión logica y razonable, quiero que mi reloj solo relojee. Hoy en dia tendriamos que valorar mas la simplicidad y no enredarnos mas en tecnología sin sentido. Como ya se decia en ese eslogan de ruedas, **"la potencia sin cotrol no sirve de nada"** pues eso mismo pasa con la tecnologia que añadimos a nuestra vida, no por meter mas, nos va a facilitar ni a ayudar en nada.
 
-![Mi nuevo reloj CASIO](hazme-casio.webp)
+![Mi nuevo reloj CASIO](hazme-casio.webp#narrow)
