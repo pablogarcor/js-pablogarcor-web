@@ -5,7 +5,10 @@
     </head>
     <body class="post-page">
         {{ partial "header.html" . }}
-        {{ $showUpdated := ne (.Date.Format "2006-01-02") (.Lastmod.Format "2006-01-02") }}
+        {{/* Show "Updated" only when the last change (from git) is more than 30
+             calendar days after publication. The sitemap and
+             article:modified_time always use the real .Lastmod. */}}
+        {{ $showUpdated := gt (.Lastmod.Format "2006-01-02") ((.Date.AddDate 0 0 30).Format "2006-01-02") }}
         <main class="post-shell">
             <article class="container post-article">
                 <header class="post-header">

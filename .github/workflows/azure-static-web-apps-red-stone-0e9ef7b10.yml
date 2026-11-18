@@ -19,6 +19,10 @@ jobs:
         with:
           submodules: true
           lfs: false
+          # Full history: --enableGitInfo takes each post's last-modified date
+          # from git. With the default depth (1) every file looks modified in
+          # the last commit.
+          fetch-depth: 0
       - name: Build Hugo site
         run: |
           docker run --rm \
