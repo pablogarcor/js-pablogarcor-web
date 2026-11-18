@@ -138,17 +138,23 @@
                     <div
                             class="email__link email__link-profiles"
                     >
-                        {{ range site.Params.profiles }}
-                        <a
+                        <button
+                                type="button"
+                                class="email__profiles-toggle"
+                                aria-expanded="false"
+                                aria-controls="email-profiles-menu"
                                 onmouseenter="changeColor('var(--page-link-color)','profiles')"
                                 onmouseleave="changeColor('inherit','profiles')"
-                                href="{{ .url }}"
-                                target="_blank"
-                                rel="me noreferrer"
                         >
-                            {{ .name }}
-                        </a>
-                        {{ end }}
+                            {{ i18n "social_profiles" }}
+                        </button>
+                        <div class="email__profiles-anchor">
+                            <ul class="email__profiles-menu" id="email-profiles-menu" hidden>
+                                {{ range site.Params.profiles }}
+                                <li><a href="{{ .url }}" target="_blank" rel="me noreferrer">{{ .name }}</a></li>
+                                {{ end }}
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div
@@ -192,6 +198,22 @@
     </div>
 </div>
 <script>
+    (() => {
+        const toggle = document.querySelector(".email__profiles-toggle")
+        const menu = document.getElementById("email-profiles-menu")
+        if (!toggle || !menu) return
+        const setOpen = open => {
+            toggle.setAttribute("aria-expanded", String(open))
+            menu.hidden = !open
+        }
+        toggle.addEventListener("click", () => setOpen(menu.hidden))
+        document.addEventListener("click", e => {
+            if (!menu.hidden && !toggle.contains(e.target) && !menu.contains(e.target)) setOpen(false)
+        })
+        document.addEventListener("keydown", e => {
+            if (e.key === "Escape" && !menu.hidden) { setOpen(false); toggle.focus() }
+        })
+    })()
     const changeColor = (color, className) => {
         const els = document.getElementsByClassName(className)
         for (const element of els) {
