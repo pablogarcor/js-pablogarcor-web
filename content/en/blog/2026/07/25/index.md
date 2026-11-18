@@ -1,12 +1,12 @@
 ---
-title: "One OpenWrt Wi-Fi Through CyberGhost, the Rest Through My ISP"
+title: "A Dedicated CyberGhost Wi-Fi on OpenWrt"
 date: 2026-07-25
 lastmod: 2026-07-30
 slug: "openwrt-cyberghost-vpn-wifi"
 translationKey: "openwrt-cyberghost-vpn-wifi"
 author: "Pablo García Ortega"
 tags: ["OpenWrt", "CyberGhost", "OpenVPN", "Networking", "PBR"]
-description: "How I configured a Xiaomi AX3600 running OpenWrt so one isolated Wi-Fi SSID uses CyberGhost OpenVPN with PBR and a kill switch, while the rest of my network keeps using the normal ISP connection."
+description: "How I made one Wi-Fi on my OpenWrt router go through CyberGhost OpenVPN with PBR and a kill switch, while the rest of my network uses the ISP."
 ---
 
 > **Update — July 30, 2026:** After publishing this guide, I found a DNS problem in the final hardened configuration: clients could still reach Internet addresses by IP, but domain names stopped working after reconnecting to the SSID. [Jump to the updated DNS fix.](#update-july-30-2026-dns-fix-after-hardening-the-firewall)
@@ -18,6 +18,8 @@ My normal devices had to continue using the ISP connection. Only the devices con
 I also wanted it to fail closed. If the VPN tunnel stopped, the clients on that SSID had to lose Internet access instead of falling back to the normal connection. Otherwise I could think that a device was using the VPN when it was not, and that was not what I was looking for
 
 The idea sounded simple: create another WiFI network and send it to the VPN. Well, it was not so simple.
+
+It was not my first VPN on OpenWrt. Some time ago I [set up WireGuard through LuCI](/wireguard-openwrt-via-luci/) to reach my homelab from outside, but that one was for coming in. This one is for going out.
 
 During the process I managed to add a gateway pointing to the router itself and I lost normal access to it. I also found that `scp` was trying to use SFTP, and that PBR expected an interface called `wan` that does not exist in my setup.
 

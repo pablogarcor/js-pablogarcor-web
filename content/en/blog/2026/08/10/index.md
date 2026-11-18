@@ -1,5 +1,5 @@
 ---
-title: "Recovering Ubuntu from an 'Unable to Mount Root FS' Kernel Panic"
+title: "Ubuntu Kernel Panic: Unable to Mount Root FS"
 date: 2026-08-10
 slug: "fix-ubuntu-kernel-panic-unable-to-mount-root-fs"
 translationKey: "fix-ubuntu-kernel-panic-unable-to-mount-root-fs"
