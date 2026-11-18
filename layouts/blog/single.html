@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.Language.Locale }}">
     <head>
-        {{ partial "head.html" (dict "page" . "css" (slice "style" "header" "contact")) }}
+        {{ partial "head.html" (dict "page" . "css" (slice "style" "header" "latest-posts" "contact")) }}
     </head>
     <body class="post-page">
         {{ partial "header.html" . }}
@@ -82,6 +82,7 @@
                     </div>
                 </footer>
             </article>
+            {{ partial "related-posts.html" . }}
         </main>
         {{ partial "footer.html" . }}
     </body>

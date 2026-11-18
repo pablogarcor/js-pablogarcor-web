@@ -4,7 +4,7 @@ date: 2026-11-13
 slug: "extasis-o-nada"
 translationKey: "extasis-o-nada"
 author: "Pablo Garcia Ortega"
-tags: ["perfeccionismo", "procrastinación", "miedo al fracaso", "motivación", "productividad", "desarrollo personal", "reflexiones"]
+tags: ["Perfeccionismo", "Procrastinación", "Miedo al fracaso", "Motivación", "Productividad", "Desarrollo personal", "Reflexión"]
 description: "¿Esperas a que todo esté perfecto para empezar? Por qué la perfección suele ser una excusa del miedo a fallar, y por qué lo mejor es lanzarse"
 ---
 

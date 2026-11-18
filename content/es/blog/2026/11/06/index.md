@@ -4,7 +4,7 @@ date: 2026-11-06
 slug: "no-estorbaras"
 translationKey: "no-estorbaras"
 author: "Pablo Garcia Ortega"
-tags: ["convivencia", "egoísmo", "reflexiones", "familia"]
+tags: ["Convivencia", "Egoísmo", "Reflexión", "Familia"]
 description: "Mi abuelo decía que el primer mandamiento debería ser «no estorbarás». Una reflexión sobre el egoísmo cotidiano y lo poco que cuesta ser considerado"
 ---
 

@@ -51,6 +51,7 @@
     background: var(--page-surface-hover-color);
 }
 
+.post h3,
 .post h4 {
     min-width: 0;
     margin: 0;
@@ -67,6 +68,12 @@
     font-family: var(--font-mono);
     font-size: var(--font-size-meta);
     line-height: 1.5;
+}
+
+/* Related posts at the end of a post (layouts/_partials/related-posts.html) */
+.related-posts.container {
+    margin: 3rem auto 0;
+    padding: 0;
 }
 
 @media only screen and (max-width: 590px) {

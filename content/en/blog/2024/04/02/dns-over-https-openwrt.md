@@ -4,7 +4,7 @@ date: 2024-04-03
 slug: "dns-over-https-openwrt"
 translationKey: "dns-over-https-openwrt"
 author: "Pablo García Ortega"
-tags: ["DNS over HTTPS", "OpenWRT", "Internet Security", "Privacy", "Network Configuration"]
+tags: ["DNS over HTTPS", "OpenWrt", "Internet Security", "Privacy", "Networking"]
 description: "Explore how DNS over HTTPS (DoH) can protect your online privacy and bypass ISP domain blocking. This guide provides a comprehensive overview and step-by-step instructions on configuring DoH on an OpenWRT router."
 ---
 
