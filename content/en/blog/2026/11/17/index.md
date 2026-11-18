@@ -4,7 +4,7 @@ date: 2026-11-17
 slug: "delegating-to-ai-agents-without-watching"
 translationKey: "delegating-to-ai-agents-without-watching"
 author: "Pablo García Ortega"
-tags: ["My AI Agent System", "AI Agents", "Automation", "Self-Hosting", "Productivity"]
+tags: ["My AI Agent System", "AI Agents", "Automation", "Self-Hosting", "Productivity", "Artificial Intelligence"]
 description: "Why I built a small system to hand tasks to AI coding agents without watching them, what I wanted from it and how its pieces fit together."
 ---
 
