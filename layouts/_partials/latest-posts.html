@@ -9,7 +9,7 @@
         {{ if $posts }}
         {{ range $posts }}
         <a class="post" href="{{ .RelPermalink }}">
-            <h4>{{ .Title }}</h4>
+            <h3>{{ .Title }}</h3>
             <time>{{ partial "post-date.html" . }}</time>
         </a>
         {{ end }}

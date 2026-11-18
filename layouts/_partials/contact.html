@@ -69,7 +69,7 @@
             >
                 <span
                         style="color: inherit"
-                        class="email__title twitter email"
+                        class="email__title profiles email"
                 >
                     @
                 </span>
@@ -125,7 +125,7 @@
                 >
                     <span
                             style="color: inherit"
-                            class="email__title twitter web email"
+                            class="email__title profiles web email"
                     >
                         pablogarcor
                     </span>
@@ -136,21 +136,19 @@
                                 height: 0.33333em;
                             "></div>
                     <div
-                            class="email__link email__link-twitter"
+                            class="email__link email__link-profiles"
                     >
+                        {{ range site.Params.profiles }}
                         <a
-                                onmouseenter="changeColor('#1DA1F2','twitter')"
-                                onmouseleave="changeColor('inherit','twitter')"
-                                href="https://twitter.com/pablogarcor"
+                                onmouseenter="changeColor('var(--page-link-color)','profiles')"
+                                onmouseleave="changeColor('inherit','profiles')"
+                                href="{{ .url }}"
                                 target="_blank"
-                                rel="noreferrer"
-                                style="
-                            margin-block-start: 1em;
-                            margin-block-end: 1em;
-                            "
+                                rel="me noreferrer"
                         >
-                            Twitter
+                            {{ .name }}
                         </a>
+                        {{ end }}
                     </div>
                 </div>
                 <div

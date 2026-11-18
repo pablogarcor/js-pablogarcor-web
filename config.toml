@@ -40,3 +40,18 @@ disableKinds = ['taxonomy', 'term']
   width = 1200
   height = 630
   alt = 'Pablo García Ortega · Software Engineer · pablogarcor.com'
+
+# Profiles linked from the footer with rel="me" (layouts/_partials/contact.html),
+# the same ones the CV links to.
+[[params.profiles]]
+  name = 'X'
+  url = 'https://x.com/pablogarcor'
+[[params.profiles]]
+  name = 'GitHub'
+  url = 'https://github.com/pablogarcor'
+[[params.profiles]]
+  name = 'GitLab'
+  url = 'https://gitlab.com/pablogarcor'
+[[params.profiles]]
+  name = 'LinkedIn'
+  url = 'https://www.linkedin.com/in/garciaortegapablo/'

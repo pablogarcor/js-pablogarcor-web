@@ -31,8 +31,17 @@
     font-size: 6em;
 }
 
-.email__link-twitter {
+.email__link-profiles {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    /* Takes the width of "pablogarcor" without widening it. */
+    width: 0;
+    min-width: 100%;
+    height: auto;
+    padding: 0.5em 0;
     font-size: 2em;
+    line-height: 1.5;
 }
 
 .email__title {
