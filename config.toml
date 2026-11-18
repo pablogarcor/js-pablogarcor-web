@@ -22,3 +22,21 @@ disableKinds = ['taxonomy', 'term']
 
 [permalinks]
   blog = "/:slug/"
+
+# Structured data and link previews (layouts/_partials/head.html,
+# share-image.html and structured-data.html).
+[params.author]
+  # The Person declared on the CV (pablogarciaortega.com). Using the same @id
+  # lets search engines attribute the posts to that person.
+  id = 'https://pablogarciaortega.com/#person'
+  name = 'Pablo García Ortega'
+  url = 'https://pablogarciaortega.com/'
+
+[params.shareImage]
+  # Default image for link previews (home, blog archive and posts without
+  # images). Generated once, 1200 x 630 JPG; its text is name, job title and
+  # domain, so the alt text is the same in both languages.
+  path = 'images/share.jpg'
+  width = 1200
+  height = 630
+  alt = 'Pablo García Ortega · Software Engineer · pablogarcor.com'

@@ -20,8 +20,8 @@ Hugo site). Every command below has been run from the repo root.
 There are no project dependencies: no `package.json`, no `go.mod`, no theme.
 The only requirement is Hugo **0.169.0**, the same version as the official Docker
 image (`ghcr.io/gohugoio/hugo:v0.169.0`) in `scripts/` and in CI. The standard
-(non-extended) edition is enough: the site uses no Sass/SCSS and no image
-processing.
+(non-extended) edition is enough: the site uses no Sass/SCSS, and its only
+image processing (WebP to JPG for link previews) works in the standard edition.
 
 Install it per version under `/srv/repos/.tools/` and call it by its full path:
 
@@ -109,3 +109,24 @@ run one.
    archive and, if it is among the 5 newest, on the home page.
 5. Posts are reviewed and published by Pablo. Agents may draft them, but must not
    commit test posts.
+
+## Link previews and structured data
+
+- `layouts/_partials/head.html` adds to every page `og:image` (with type,
+  width, height and alt), `twitter:card` `summary_large_image` and
+  `twitter:image`. The image comes from `layouts/_partials/share-image.html`:
+  - Posts with images: the first image referenced in the Markdown that is a
+    page resource, converted to JPG (max. 1200 px) with Hugo image processing.
+    Its alt is the Markdown alt text, so keep it meaningful.
+  - Home, blog archive, 404 and posts without images: the default image
+    `static/images/share.jpg` (1200 x 630, `params.shareImage` in
+    `config.toml`).
+- `layouts/_partials/structured-data.html` adds JSON-LD: `WebSite` on the home
+  page of each language and `BlogPosting` on each post. Author and publisher
+  are the Person of the CV, referenced by `params.author.id`
+  (`https://pablogarciaortega.com/#person`). Do not change that `@id`.
+- `og:image` and the JSON-LD use absolute URLs, like canonical, hreflang and
+  `og:url`. Internal navigation links stay relative.
+- To check: build, then confirm each `public/**/index.html` has one
+  `og:image` and the JSON-LD parses, e.g.
+  `grep -o '<script type=application/ld+json>.*</script>' public/index.html`.

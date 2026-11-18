@@ -169,6 +169,9 @@ The site uses custom templates instead of a theme:
 - `layouts/_partials/latest-posts.html`: five latest posts on the homepage.
 - `layouts/_partials/contact.html`: contact block.
 - `layouts/_partials/footer.html`: footer and Hugo logo.
+- `layouts/_partials/head.html`: metadata, Open Graph and Twitter Card.
+- `layouts/_partials/share-image.html`: image for link previews (first post image as JPG, or `static/images/share.jpg`).
+- `layouts/_partials/structured-data.html`: JSON-LD (`WebSite` on the home page, `BlogPosting` on posts).
 
 CSS is served directly from `static/css/`:
 

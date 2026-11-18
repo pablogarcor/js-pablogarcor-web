@@ -1,0 +1,51 @@
+{{- /*
+  JSON-LD (schema.org). The author and publisher is the Person declared on the
+  CV, referenced by its @id (params.author in config.toml), so search engines
+  can attribute the posts to the same person.
+  - Home page (each language): WebSite.
+  - Posts: BlogPosting.
+  Absolute URLs on purpose, like canonical and og:url.
+  Parameters: page, image (dict from share-image.html).
+*/ -}}
+{{- $page := .page -}}
+{{- $a := site.Params.author -}}
+{{- $person := dict "@type" "Person" "@id" $a.id "name" $a.name "url" $a.url -}}
+{{- $website := dict "@type" "WebSite" "@id" (printf "%s#website" site.Home.Permalink) -}}
+{{- $data := dict -}}
+{{- if $page.IsHome -}}
+  {{- $data = dict
+    "@context" "https://schema.org"
+    "@type" "WebSite"
+    "@id" (index $website "@id")
+    "url" $page.Permalink
+    "name" site.Title
+    "description" ($page.Description | default site.Home.Description)
+    "inLanguage" site.Language.Locale
+    "image" .image.url
+    "author" $person
+    "publisher" $person
+  -}}
+{{- else if and $page.IsPage (eq $page.Section "blog") -}}
+  {{- $data = dict
+    "@context" "https://schema.org"
+    "@type" "BlogPosting"
+    "@id" (printf "%s#blogposting" $page.Permalink)
+    "mainEntityOfPage" $page.Permalink
+    "url" $page.Permalink
+    "headline" $page.Title
+    "description" ($page.Description | default site.Home.Description)
+    "datePublished" ($page.Date.UTC.Format "2006-01-02T15:04:05Z")
+    "dateModified" ($page.Lastmod.UTC.Format "2006-01-02T15:04:05Z")
+    "inLanguage" site.Language.Locale
+    "image" (dict "@type" "ImageObject" "url" .image.url "width" .image.width "height" .image.height)
+    "author" $person
+    "publisher" $person
+    "isPartOf" $website
+  -}}
+  {{- with $page.Params.tags -}}
+    {{- $data = merge $data (dict "keywords" .) -}}
+  {{- end -}}
+{{- end -}}
+{{- with $data }}
+<script type="application/ld+json">{{ . | jsonify | safeJS }}</script>
+{{- end -}}
