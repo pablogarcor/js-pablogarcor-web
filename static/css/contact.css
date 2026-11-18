@@ -31,8 +31,75 @@
     font-size: 6em;
 }
 
-.email__link-twitter {
+.email__link-profiles {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
     font-size: 2em;
+}
+
+.email__profiles-toggle {
+    margin: 0.5em 0 0;
+    padding: 0;
+    color: inherit;
+    background: none;
+    border: 0;
+    font: inherit;
+    cursor: pointer;
+}
+
+.email__profiles-toggle::after {
+    content: " \25BE";
+}
+
+.email__profiles-toggle[aria-expanded="true"]::after {
+    content: " \25B4";
+}
+
+.email__profiles-toggle:hover,
+.email__profiles-toggle[aria-expanded="true"] {
+    color: var(--page-link-color);
+}
+
+/*
+ * The menu has no top/left, so it sits at its static position: centred at the
+ * top of this zero-height anchor, right under the button. Its containing block
+ * is .site-footer__inner, outside the scrolling .email__container, so it is
+ * not clipped.
+ */
+.email__profiles-anchor {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 0;
+}
+
+.email__profiles-menu {
+    position: absolute;
+    z-index: 10;
+    margin: 0.4rem 0 0;
+    padding: 0.4rem 0;
+    list-style: none;
+    font-size: 1rem;
+    line-height: 1.5;
+    background: var(--footer-background-color);
+    border: 1px solid var(--page-border-color);
+    border-radius: var(--radius-md);
+    box-shadow: 0 8px 24px var(--code-block-shadow-color);
+}
+
+.email__profiles-menu[hidden] {
+    display: none;
+}
+
+.email__profiles-menu li {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.email__profiles-menu a {
+    display: block;
+    padding: 0.35rem 1.25rem;
 }
 
 .email__title {
