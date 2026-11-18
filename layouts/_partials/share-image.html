@@ -1,0 +1,44 @@
+{{- /*
+  Image for link previews (og:image, twitter:image) and for the JSON-LD.
+  Returns a dict with url (absolute), width, height, alt and type.
+
+  - Posts that are leaf bundles with images: the first image referenced in the
+    Markdown that is a page resource (not SVG), converted to JPG with Hugo's
+    image processing (social networks do not always accept WebP), at most
+    1200 px wide or high. Its alt text is the Markdown alt, or the post title.
+  - Everything else: the default image, static/<params.shareImage.path>.
+*/ -}}
+{{- $page := . -}}
+{{- $d := site.Params.shareImage -}}
+{{- $result := dict
+  "url" ($d.path | absURL)
+  "width" $d.width
+  "height" $d.height
+  "alt" $d.alt
+  "type" "image/jpeg"
+-}}
+{{- if and $page.IsPage (eq $page.Section "blog") -}}
+  {{- $found := false -}}
+  {{- range $m := findRESubmatch `!\[([^\]]*)\]\(\s*<?([^)\s>]+)` $page.RawContent -}}
+    {{- if not $found -}}
+      {{- $u := urls.Parse (index $m 2) -}}
+      {{- if not $u.IsAbs -}}
+        {{- with $page.Resources.Get (strings.TrimPrefix "./" $u.Path) -}}
+          {{- if and (eq .ResourceType "image") (ne .MediaType.SubType "svg") -}}
+            {{- $img := .Process "fit 1200x1200 jpg q80" -}}
+            {{- $found = true -}}
+            {{- $alt := index $m 1 | default $page.Title -}}
+            {{- $result = dict
+              "url" $img.Permalink
+              "width" $img.Width
+              "height" $img.Height
+              "alt" $alt
+              "type" "image/jpeg"
+            -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return $result -}}
