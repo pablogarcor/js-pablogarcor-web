@@ -5,10 +5,10 @@ slug: "migrating-website-azure"
 translationKey: "migrating-website-azure"
 author: "Pablo García Ortega"
 tags: ["Azure", "Cloud Migration", "Web Hosting", "Static Websites", "GitHub Integration"]
-description: "Discover the benefits and process of migrating a personal website to Azure. This article covers why Azure is a great choice for hosting, the streamlined architecture setup using Hugo, and the advantages of automated deployments through GitHub integration."
+description: "Why I moved my Hugo website from a DigitalOcean Droplet to the free tier of Azure Static Web Apps, with automatic deployments from GitHub."
 ---
 
-I had my website and my dockerized mail server on DigitalOcean. Everything worked seamlessly well. However, these were personal projects and didn’t demand a lot of resources. That’s why I decided to migrate and stop paying more than 4 bucks every month for my droplet.
+I had my website and my dockerized mail server on DigitalOcean. Everything worked seamlessly well. However, these were personal projects and didn’t demand a lot of resources. That’s why I decided to migrate and stop paying more than 4 bucks every month for [my droplet](/boost-digitalocean-droplet-memory-without-upgrading/).
 
 ## Why Azure?
 
@@ -16,7 +16,7 @@ Azure is the **Microsoft cloud** and keeps growing every day. I'm also trying to
 
 ## My Website Architecture and Deployment
 
-My website architecture is simple. It is just a static webpage created using the **Hugo Static Site Generator**. Every time I wanted to post a new article, I needed to modify the code, add the content, and build the site with Hugo. After that, I uploaded the content to my web server folder on the DigitalOcean droplet. Using Azure, I will avoid some unnecessary steps:
+My website architecture is simple. It is just a static webpage created using the **Hugo Static Site Generator** ([my tech stack](/my-web-tech-stack/)). Every time I wanted to post a new article, I needed to modify the code, add the content, and build the site with Hugo. After that, I uploaded the content to my web server folder on the DigitalOcean droplet. Using Azure, I will avoid some unnecessary steps:
 
 1. Azure is directly connected with my GitHub repo, and every time the main branch is updated, Azure triggers the deployment of the new build of my website.
 2. Because it is connected directly to my GitHub, I don't have to make the manual build of my site.
@@ -24,7 +24,7 @@ My website architecture is simple. It is just a static webpage created using the
 
 ## How to Do It?
 
-Well, Azure docs are a charm. They have all the process well documented, from setting up your GitHub account to retrieve your webpage project to DNS configuration, using Azure DNS or a third-party DNS service. I used a third-party service because I don’t want to pay Azure DNS for such basic stuff. The docs to configure the website and build it with Hugo are here: [Publish Hugo](https://learn.microsoft.com/en-us/azure/static-web-apps/publish-hugo). On that same page, you can press on "next steps" if you want to configure a custom domain to point to your site.
+Well, Azure docs are a charm. They have all the process well documented, from setting up your GitHub account to retrieve your webpage project to DNS configuration, using Azure DNS or a third-party DNS service. I used a third-party service because I don’t want to pay Azure DNS for such basic stuff ([how I redirected the apex domain to www without it](/redirect-apex-domain-to-www-azure-static-web-app/)). The docs to configure the website and build it with Hugo are here: [Publish Hugo](https://learn.microsoft.com/en-us/azure/static-web-apps/publish-hugo). On that same page, you can press on "next steps" if you want to configure a custom domain to point to your site.
 
 ## Pros
 

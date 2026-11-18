@@ -8,7 +8,7 @@ tags: ["SEO", "Personal Branding", "Personal Website", "SERPs", "Web Development
 description: "How I created a small personal CV page in English and Spanish to help Google connect my name, Pablo Garcia Ortega, with my own website."
 ---
 
-Some time ago I wrote that I wanted to rank my name in Google. I searched for my name, Pablo Garcia Ortega, and the first results were not really about me. It was a bit annoying, and also a small ego hit, because I have been building things online for years but my own name was not under my control.
+Some time ago [I wrote that I wanted to rank my name in Google](/positioning-my-name-serps/). I searched for my name, Pablo Garcia Ortega, and the first results were not really about me. It was a bit annoying, and also a small ego hit, because I have been building things online for years but my own name was not under my control.
 
 Now I finally created a specific personal page for that. It is not a big portfolio or a complicated website. It is more like a simple CV page, with my name, what I do, some context about my work.
 

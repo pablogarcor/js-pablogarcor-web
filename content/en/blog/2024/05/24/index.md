@@ -4,7 +4,7 @@ date: 2024-05-24
 slug: "icloud-custom-email-thunderbird"
 translationKey: "icloud-custom-email-thunderbird"
 tags: ["iCloud+", "Thunderbird", "Email Setup", "Linux"]
-description: "Learn how to add a custom iCloud+ email account to Thunderbird on Linux. This guide provides step-by-step instructions for configuring your email client with an Apple app-specific password."
+description: "How to add an iCloud+ custom email domain address to Thunderbird on Linux, and why it only works with an Apple app-specific password."
 ---
 
 I use a couple of Apple products, but macOS isn’t one of my favorites. On my laptops and PCs, I have different flavors of Linux, and on all of them, I use Thunderbird as my mail client. Some time ago, I migrated my self-hosted mail server to iCloud+ (because it was cheaper and easier), and now I need to add my custom iCloud+ email address in Thunderbird. Here’s how I made it work:
