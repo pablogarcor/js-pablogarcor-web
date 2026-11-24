@@ -4,7 +4,7 @@ date: 2026-07-31
 slug: "esto-marcara-un-aintes-y-un-despues"
 translationKey: "esto-marcara-un-aintes-y-un-despues"
 author: "Pablo Garcia Ortega"
-tags: ["Inteligencia Artificial", "Productividad", "Reflexión"]
+tags: ["Inteligencia artificial", "Productividad", "Reflexión"]
 description: "Una reflexión sobre cómo la inteligencia artificial está cambiando nuestra forma de trabajar y por qué todos terminaremos usándola."
 ---
 
