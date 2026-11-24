@@ -5,10 +5,10 @@ slug: "dns-over-https-openwrt"
 translationKey: "dns-over-https-openwrt"
 author: "Pablo García Ortega"
 tags: ["DNS over HTTPS", "OpenWrt", "Internet Security", "Privacy", "Networking"]
-description: "Explore how DNS over HTTPS (DoH) can protect your online privacy and bypass ISP domain blocking. This guide provides a comprehensive overview and step-by-step instructions on configuring DoH on an OpenWRT router."
+description: "How I set up DNS over HTTPS on my OpenWrt router with https-dns-proxy to hide DNS requests from my ISP and get around DNS-based domain blocks."
 ---
 
-One week ago, in Spain, a [judge attempted to block access to Telegram](https://www.reuters.com/world/europe/high-court-orders-temporary-suspension-telegrams-services-spain-2024-03-23/) due to copyright issues with some national media firms. That incident made me think about what I could do if my ISP decides to ban a site like Telegram, preventing access. The obvious workaround for geo-blocked sites is using a VPN, but I sought a simpler solution for soft domain bans. That's when I discovered DNS over HTTPS (DoH).
+One week ago, in Spain, a [judge attempted to block access to Telegram](https://www.reuters.com/world/europe/high-court-orders-temporary-suspension-telegrams-services-spain-2024-03-23/) due to copyright issues with some national media firms. That incident made me think about what I could do if my ISP decides to ban a site like Telegram, preventing access. The obvious workaround for geo-blocked sites is [using a VPN](/openwrt-cyberghost-vpn-wifi/), but I sought a simpler solution for soft domain bans. That's when I discovered DNS over HTTPS (DoH).
 
 ## What is DNS over HTTPS or DoH?
 
@@ -34,7 +34,7 @@ After this, if you see request after request, it means you're not using DoH.
 Configuring DNS over HTTPS on all devices might be cumbersome, so setting it up on the router to cover the whole network is more efficient.
 
 1. Access your router's web interface (LUCi).
-2. Navigate to System → Software and click "Update lists..." Then install the package named `luci-app-https-dns-proxy` to configure the options in LuCI.
+2. Navigate to System → Software and click "Update lists..." Then install the package named `luci-app-https-dns-proxy` to configure the options in LuCI. If you have never installed a package from LuCI, [my WireGuard on OpenWrt post](/wireguard-openwrt-via-luci/) shows it step by step with screenshots.
 3. `https-dns-proxy` comes with Google and Cloudflare DNS by default. Configure the proxy in LuCI under Services → HTTPS DNS Proxy. Configure dnsmasq under Network → DHCP and DNS.
 
 To verify it's working, use tcpdump again to check if DNS requests are being sent over port 53.

@@ -390,6 +390,7 @@ table {
 .site-footer__inner {
     width: min(calc(100% - 2rem), var(--content-max-width));
     max-width: var(--content-max-width);
+    position: relative;
     margin: 0 auto;
 }
 

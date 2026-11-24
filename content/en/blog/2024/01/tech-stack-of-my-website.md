@@ -5,7 +5,7 @@ slug: "my-web-tech-stack"
 translationKey: "my-web-tech-stack"
 author: "Pablo García Ortega"
 tags: ["Web Development", "Tech Stack", "Docker", "Caddy Server", "Hugo SSG", "Site Optimization", "Efficient Web Design"]
-description: "Discover the streamlined and efficient tech stack behind pablogarcor.com. This post delves into why I chose Docker, Caddy Server, and Hugo SSG, highlighting the advantages of these technologies in modern web development."
+description: "Why I built pablogarcor.com with Hugo, Caddy and Docker instead of a CMS: a simple site that loads fast, builds fast and has few dependencies."
 ---
 
 

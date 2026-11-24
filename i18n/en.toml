@@ -66,3 +66,6 @@ other = "The page you are looking for does not exist or has moved. You can brows
 
 [related_posts]
 other = "Related posts"
+
+[social_profiles]
+other = "Social"

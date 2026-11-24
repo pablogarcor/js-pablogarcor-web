@@ -5,13 +5,13 @@ slug: "my-2024-goals"
 translationKey: "my-2024-goals"
 author: "Pablo García Ortega"
 tags: ["Coding", "DIY", "Smart Home Automation", "Python", "Multimedia Server"]
-description: "In my inaugural blog post, I dive into my aspirations for 2024, ranging from web development and smart home automation to Python programming and setting up a multimedia server."
+description: "My goals for 2024: finally keep a blog, improve this website, set up a VPN and a Plex media server, self-host my smart home and get back to Python."
 ---
 
 
 I've been thinking a lot about starting my **own website** where I can write about coding and stuff. I've even begun a couple of times, but those attempts didn't go anywhere. After some time, I ended up leaving them behind, but **this time will be different**. 
 
-The idea of writing on my own website came to me a couple of months ago when I was reading about Static Site Generators (SSGs). Then, I rented a Digital Ocean instance, put my Docker skills to work, and brought up a site using Hugo. Since then, I've been reading and building my site from scratch in my spare time. But then I realized that I need more than just code. 
+The idea of writing on my own website came to me a couple of months ago when I was reading about Static Site Generators (SSGs). Then, I rented a Digital Ocean instance, put my Docker skills to work, and brought up a site using Hugo ([this is the tech stack I chose](/my-web-tech-stack/)). Since then, I've been reading and building my site from scratch in my spare time. But then I realized that I need more than just code. 
 
 So now, with my **New Year's resolutions still fresh**, is the perfect time to do it. My goal is to write two posts per month about something I've done or learned in my work or personal projects. By the way, I'm a **software developer**, but I also love messing with hardware, DIY projects, and configuring my own systems.
 
@@ -27,7 +27,7 @@ I also want to make a dark mode/light mode button because I'm one of those peopl
 
 ### Network Setup 
 
-I also want to finish my network setup, where I need a VPN to connect to certain services when I'm away from home and to let my family access a multimedia server I'm configuring. This leads to my next topic.
+I also want to finish my network setup, where I need a VPN to connect to certain services when I'm away from home ([I later set it up with WireGuard on OpenWrt](/wireguard-openwrt-via-luci/)) and to let my family access a multimedia server I'm configuring. This leads to my next topic.
 
 ### Setting Up a Multimedia Server with Plex
 

@@ -51,8 +51,7 @@
     background: var(--page-surface-hover-color);
 }
 
-.post h3,
-.post h4 {
+.post h3 {
     min-width: 0;
     margin: 0;
     font-family: var(--font-body);

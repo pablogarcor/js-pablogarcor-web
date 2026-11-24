@@ -5,7 +5,7 @@ slug: "positioning-my-name-serps"
 translationKey: "positioning-my-name-serps"
 author: "Pablo García Ortega"
 tags: ["SEO", "Personal Branding", "Digital Marketing", "SERPs", "Website Optimization"]
-description: "Improve my online presence by optimizing his website to rank for my name in search engine results pages (SERPs)."
+description: "My plan to get my own name on the first page of Google with a page about me and the pablogarciaortega.com domain, without paid SEO tools."
 ---
 
 The other day, I searched my full name on Google, and none of the results on the first page were about me. That hurt my ego, so I started thinking about how to get my name to the top. My goal is to have a page from my website that talks about me appear on the first page, or maybe even as the first result.
@@ -27,3 +27,5 @@ I hope that using the domain will help me rank easily on the first page, but it 
 ## Conclusion
 
 In the coming weeks, I plan to create a page and include my name in the titles, URL, and paragraphs, then point the domain pablogarciaortega.com to that page. Once that's done, I'll monitor the results in the SERPs weekly and hope to reach the first page. I'll keep you updated.
+
+**Update:** in 2026 I finally did it with a separate site. I explain it in [Building a Personal CV Page to Rank My Name](/building-personal-cv-page-to-rank-my-name/).

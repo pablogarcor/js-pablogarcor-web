@@ -1,13 +1,13 @@
 ---
-title: "Redirecting an Apex Domain to www on Azure Static Web App"
+title: "Apex to www Redirect on Azure Static Web Apps"
 date: 2024-05-02
 slug: "redirect-apex-domain-to-www-azure-static-web-app"
 translationKey: "redirect-apex-domain-to-www-azure-static-web-app"
 tags: ["Azure", "DNS", "Web Development", "Namecheap"]
-description: "Learn how to redirect an apex domain to www using Azure Static Web App. This guide covers the entire process from initial setup to linking domains with third-party DNS providers and configuring default domains."
+description: "How to redirect an apex domain to www on Azure Static Web Apps with a third-party DNS provider: add both domains and set www as the default."
 ---
 
-In a [recent blog post](/migrating-website-azure), I detailed my journey of setting up a static webpage using Azure. The process was generally smooth, but I encountered an early hiccup. To minimize expenses for my personal blog, I opted out of using Azure DNS. Instead, I explored redirecting traffic from `pablogarcor.com` to `www.pablogarcor.com` using Namecheap URL redirections, which initially appeared more complex than needed. Fortunately, I found a much simpler method.
+In a [recent blog post](/migrating-website-azure/), I detailed my journey of setting up a static webpage using Azure. The process was generally smooth, but I encountered an early hiccup. To minimize expenses for my personal blog, I opted out of using Azure DNS. Instead, I explored redirecting traffic from `pablogarcor.com` to `www.pablogarcor.com` using Namecheap URL redirections, which initially appeared more complex than needed. Fortunately, I found a much simpler method.
 
 ## How to Redirect an Apex Domain to www on an Azure Static Web App
 Follow this streamlined setup guide:

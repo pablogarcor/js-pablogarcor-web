@@ -4,7 +4,7 @@ date: 2024-02-15
 slug: "wireguard-openwrt-via-luci"
 translationKey: "wireguard-openwrt-via-luci"
 tags: ["VPN", "WireGuard", "OpenWrt", "Networking"]
-description: "A comprehensive guide to setting up a WireGuard VPN on OpenWrt using the LuCI interface, including installation, key generation, network configuration, and client setup."
+description: "How to set up a WireGuard VPN on OpenWrt from the LuCI interface: install the package, generate the keys, create the interface and connect an iPhone."
 ---
 
 In my quest to access my homelab remotely, I decided to set up a VPN. After evaluating several options, **WireGuard** emerged as the clear winner due to its simplicity, speed, and lightweight nature, perfectly aligning with my needs. It's important to first ensure your network is not under Carrier Grade NAT (CGNAT). A simple call to your ISP can confirm this status, and if necessary, you might need to request a change—though this could incur additional fees.
@@ -95,3 +95,5 @@ Check connectivity under `Status > Wireguard` in LuCI, where a successful handsh
 ## Conclusion
 
 By following these steps, we've successfully established a basic VPN connection using WireGuard on OpenWrt, facilitating access to a specified subnet. Future enhancements will aim to enable full internet connectivity and inter-network access, expanding the capabilities of our VPN configuration.
+
+Later I also used OpenWrt to set up [DNS over HTTPS](/dns-over-https-openwrt/) and [a Wi-Fi network that goes out through CyberGhost](/openwrt-cyberghost-vpn-wifi/).
