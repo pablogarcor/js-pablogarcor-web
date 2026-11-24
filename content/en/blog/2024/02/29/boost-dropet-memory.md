@@ -4,7 +4,7 @@ date: 2024-02-29
 slug: "boost-digitalocean-droplet-memory-without-upgrading"
 translationKey: "boost-digitalocean-droplet-memory-without-upgrading"
 author: "Pablo García Ortega"
-tags: ["DigitalOcean", "Server Optimization", "Web Development", "Memory Management", "SWAP Memory", "Linux Server", "Tech Solutions"]
+tags: ["DigitalOcean", "Server Optimization", "Web Development", "Memory Management", "SWAP Memory", "Linux", "Tech Solutions"]
 description: "How I added a 2 GB swap file to the smallest DigitalOcean Droplet so a static site and a mail server fit in 512 MB of RAM without upgrading."
 ---
 

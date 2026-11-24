@@ -1,0 +1,19 @@
+{{- /* Up to 3 posts of the same language that share tags with this one
+       (see [related] in config.toml). Nothing is rendered if there are none. */ -}}
+{{- $posts := where .Site.RegularPages "Section" "blog" -}}
+{{- $related := first 3 ($posts.Related .) -}}
+{{- with $related }}
+<section class="container latest-posts related-posts" aria-labelledby="related-posts-title">
+    <div class="latest-posts__header">
+        <h2 id="related-posts-title">{{ i18n "related_posts" }}</h2>
+    </div>
+    <div class="latest-posts__list">
+        {{- range . }}
+        <a class="post" href="{{ .RelPermalink }}">
+            <h3>{{ .Title }}</h3>
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ partial "post-date.html" . }}</time>
+        </a>
+        {{- end }}
+    </div>
+</section>
+{{- end }}

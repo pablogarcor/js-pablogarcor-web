@@ -69,6 +69,12 @@
     line-height: 1.5;
 }
 
+/* Related posts at the end of a post (layouts/_partials/related-posts.html) */
+.related-posts.container {
+    margin: 3rem auto 0;
+    padding: 0;
+}
+
 @media only screen and (max-width: 590px) {
     .latest-posts {
         margin-bottom: 3rem;

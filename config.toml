@@ -41,6 +41,17 @@ disableKinds = ['taxonomy', 'term']
   height = 630
   alt = 'Pablo García Ortega · Software Engineer · pablogarcor.com'
 
+# Related posts at the end of each post (layouts/_partials/related-posts.html).
+# Only shared tags count; tags are compared in lowercase, and older posts may
+# link to newer ones.
+[related]
+  includeNewer = true
+  threshold = 0
+  toLower = true
+  [[related.indices]]
+    name = 'tags'
+    weight = 100
+
 # Profiles linked from the footer with rel="me" (layouts/_partials/contact.html),
 # the same ones the CV links to.
 [[params.profiles]]

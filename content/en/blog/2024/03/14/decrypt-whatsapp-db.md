@@ -4,7 +4,7 @@ date: 2024-03-14
 slug: "decrypt-whatsapp-db"
 translationKey: "decrypt-whatsapp-db"
 author: "Pablo García Ortega"
-tags: ["WhatsApp Encryption", "Data Recovery", "Python Projects", "Data Security", "WhatsApp Decryption"]
+tags: ["WhatsApp Encryption", "Data Recovery", "Python", "Data Security", "WhatsApp Decryption"]
 description: "How to get all your WhatsApp chats into a database: an end-to-end encrypted backup, its hex key and a Python tool to decrypt the crypt15 file."
 ---
 

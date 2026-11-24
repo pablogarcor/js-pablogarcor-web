@@ -4,7 +4,7 @@ date: 2026-06-03
 slug: "escribir-por-escribir"
 translationKey: "escribir-por-escribir"
 author: "Pablo Garcia Ortega"
-tags: ["Escritura", "Vida Personal", "Reflexión"]
+tags: ["Escritura", "Vida personal", "Reflexión"]
 description: "Una reflexión personal sobre lo poco que escribimos cuando no es por obligación"
 ---
 

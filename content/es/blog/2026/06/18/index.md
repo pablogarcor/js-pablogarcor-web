@@ -7,7 +7,7 @@ translationKey: "hazme-casio"
 aliases:
   - /hacedme-casio/
 author: "Pablo Garcia Ortega"
-tags: ["Tecnología", "Smartwatches", "Vida Personal", "Reflexión"]
+tags: ["Tecnología", "Smartwatches", "Vida personal", "Reflexión"]
 description: "Por qué he decidido cambiar el smartwatch por mi viejo CASIO F-91W y dejar de medirlo todo."
 ---
 

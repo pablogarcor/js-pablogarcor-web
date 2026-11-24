@@ -4,7 +4,7 @@ date: 2024-04-03
 slug: "dns-over-https-openwrt"
 translationKey: "dns-over-https-openwrt"
 author: "Pablo García Ortega"
-tags: ["DNS over HTTPS", "OpenWRT", "Internet Security", "Privacy", "Network Configuration"]
+tags: ["DNS over HTTPS", "OpenWrt", "Internet Security", "Privacy", "Networking"]
 description: "How I set up DNS over HTTPS on my OpenWrt router with https-dns-proxy to hide DNS requests from my ISP and get around DNS-based domain blocks."
 ---
 

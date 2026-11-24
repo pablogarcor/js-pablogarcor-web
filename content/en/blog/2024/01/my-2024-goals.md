@@ -4,7 +4,7 @@ date: 2024-01-21
 slug: "my-2024-goals"
 translationKey: "my-2024-goals"
 author: "Pablo García Ortega"
-tags: ["Coding", "DIY Projects", "Smart Home Automation", "Python Development", "Multimedia Server"]
+tags: ["Coding", "DIY", "Smart Home Automation", "Python", "Multimedia Server"]
 description: "My goals for 2024: finally keep a blog, improve this website, set up a VPN and a Plex media server, self-host my smart home and get back to Python."
 ---
 
