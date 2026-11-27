@@ -6,7 +6,7 @@
 <body class="home-page">
 
 {{ partial "header.html" . }}
-{{ $blogURL := "/blog" | relLangURL }}
+{{ $blogURL := "/blog/" | relLangURL }}
 <main class="container">
     <section class="home-intro">
         {{ $presentationContentPage := .Site.GetPage "/presentation.md" }}

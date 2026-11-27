@@ -25,6 +25,9 @@
 {{- end }}
 {{- end }}
 {{- end }}
+{{- with site.Home.OutputFormats.Get "rss" }}
+<link rel="alternate" type="{{ .MediaType.Type }}" href="{{ .RelPermalink }}" title="{{ printf "%s · %s" site.Home.Title site.Title }}">
+{{- end }}
 <meta property="og:site_name" content="{{ site.Title }}">
 <meta property="og:title" content="{{ cond $page.IsHome $title $pageTitle }}">
 <meta property="og:description" content="{{ $description }}">

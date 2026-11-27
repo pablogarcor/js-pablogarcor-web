@@ -40,7 +40,7 @@
   <body class="not-found-page">
     {{ partial "header.html" . }}
     {{ $homeURL := "/" | relLangURL }}
-    {{ $blogURL := "/blog" | relLangURL }}
+    {{ $blogURL := "/blog/" | relLangURL }}
     <main class="container">
       <section class="home-intro">
         {{- $poster := "/media/vincent-404-poster.webp" | relURL }}
